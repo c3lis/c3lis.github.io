@@ -1,0 +1,42 @@
+I"Ÿ<h1> TE AMO LU ME AMAS?</h1>
+
+<p>Hola hoy estaermos hablando de pentesting web, hablaremos sobre:</p>
+<ul>
+  <li><strong>Creacion de ReverseShell comandos</strong></li>
+  <li><strong>Como estan compuestos los payloads exploits malware para windows.</strong>
+<br /></li>
+</ul>
+
+<p>Vale primero que es una <strong>ReverseShell</strong>, lo explicara en un lenguaje brusco, una ReverShell es aquella que te permite
+ejecutar comandos en una pc que no es tu dominio, es decir una ip el cual es la tuya conectada a un hosts,
+donde el hosts no es tu equipo y te permite ejecucion remota de comandos.</p>
+
+<p><a href="https://www.google.com/search?q=ReverseShell&amp;client=firefox-b-d&amp;sxsrf=ALiCzsbKFcBidTADzj_JE7x-ksfIvwVUpA%3A1658946186694&amp;ei=ioLhYpz9KeezqtsPnd-L8A0&amp;ved=0ahUKEwic6qKR2Jn5AhXnmWoFHZ3vAt4Q4dUDCA0&amp;uact=5&amp;oq=ReverseShell&amp;gs_lcp=Cgdnd3Mtd2l6EAMyBwgjELECECcyBwgjELECECcyBwgjELECECcyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEM6BwgAEEcQsAM6BAguECc6BAgjECc6CwgAEIAEELEDEIMBOgcIIxDqAhAnOggIABCxAxCDAToFCAAQgAQ6BAgAEAM6BggjECcQEzoKCAAQsQMQgwEQQzoKCC4QsQMQgwEQQzoGCAAQChBDOggIABCABBCxAzoICC4QgAQQsQM6BwgAEIAEEAo6BwgAEAoQywE6BQgAEMsBSgQIQRgASgQIRhgAUM4EWPkxYJkzaAhwAXgBgAHzAYgBrBqSAQYwLjE0LjSYAQCgAQGwAQrIAQjAAQE&amp;sclient=gws-wiz">Puedes encontrar mas informacion aqui</a>.</p>
+
+<hr />
+<p><br /></p>
+
+<h3>Empezaremos con las pruebas de ReverseShell:</h3>
+<p>los programas a utilizar para la ReverseShell es bash, netcat, si usas linux es probable que ya tengas los tengas instalados, 
+en el caso contrario ejecuta:
+<br /></p>
+
+<p>para linux:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt-get install netcat bash</code></p>
+
+<p>para arch-linux:</p>
+
+<p><code class="language-plaintext highlighter-rouge">pacman -Sy netcat bash</code></p>
+
+<p><br /></p>
+
+<p><strong>IMPORTANTE</strong> : para estas bruebas si lo vas a hacer desde terminal, tienes que utilizar bash y no zsh por que te dara
+errores, claro si quieres puedes probar de zsh y conocer los errores pero si quieres omitir esto, entonces solo ejecutas
+el siguiente comando:</p>
+
+<p><code class="language-plaintext highlighter-rouge">bash</code></p>
+
+<p><img src="screen_bash.png" /></p>
+
+:ET

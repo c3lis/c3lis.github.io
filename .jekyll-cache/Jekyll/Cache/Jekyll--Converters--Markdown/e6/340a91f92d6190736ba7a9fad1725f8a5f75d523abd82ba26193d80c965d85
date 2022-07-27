@@ -1,0 +1,16 @@
+I"W<p>Hola hoy estaermos hablando de pentesting web, hablaremos sobre:</p>
+<ul>
+  <li><strong>Creacion de ReverseShell comandos</strong></li>
+  <li><strong>Como estan compuestos los payloads exploits malware para windows.</strong></li>
+</ul>
+
+<p>Vale primero que es una <strong>ReverseShell</strong>, lo explicara en un lenguaje brusco, una ReverShell es aquella que te permite
+ejecutar comandos en una pc que no es tu dominio, es decir una ip el cual es la tuya conectada a un hosts,
+donde el hosts no es tu equipo y te permite ejecucion remota de comandos.</p>
+
+<p><a href="https://www.google.com/search?q=ReverseShell&amp;client=firefox-b-d&amp;sxsrf=ALiCzsbKFcBidTADzj_JE7x-ksfIvwVUpA%3A1658946186694&amp;ei=ioLhYpz9KeezqtsPnd-L8A0&amp;ved=0ahUKEwic6qKR2Jn5AhXnmWoFHZ3vAt4Q4dUDCA0&amp;uact=5&amp;oq=ReverseShell&amp;gs_lcp=Cgdnd3Mtd2l6EAMyBwgjELECECcyBwgjELECECcyBwgjELECECcyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEM6BwgAEEcQsAM6BAguECc6BAgjECc6CwgAEIAEELEDEIMBOgcIIxDqAhAnOggIABCxAxCDAToFCAAQgAQ6BAgAEAM6BggjECcQEzoKCAAQsQMQgwEQQzoKCC4QsQMQgwEQQzoGCAAQChBDOggIABCABBCxAzoICC4QgAQQsQM6BwgAEIAEEAo6BwgAEAoQywE6BQgAEMsBSgQIQRgASgQIRhgAUM4EWPkxYJkzaAhwAXgBgAHzAYgBrBqSAQYwLjE0LjSYAQCgAQGwAQrIAQjAAQE&amp;sclient=gws-wiz">Puedes encontrar mas informacion aqui</a>.</p>
+
+<p>Empezaremos con las pruebas de ReverseShell:
+<a href="#header-3"></a>Header 3</p>
+
+:ET
