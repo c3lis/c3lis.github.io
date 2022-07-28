@@ -65,7 +65,7 @@ echo '' > /dev/tcp/$1/$x
    seq 1 65535
 ```
 
-<p><font color="yellow">[*]</font> Y los && significa si el comando anterior fue correcto entonces ejecutame esto en este caso:</p>
+<p><font color="yellow">[*]</font> Y los && significa si el comando anterior fue correcto entonces ejecutame esto, en este caso:</p>
 ````#!/bin/bash
 echo -e "Port Open :$x"
 ```
