@@ -13,7 +13,7 @@ de una maquina para asi poderla vulnerar, pero hay que saber que esta no es la u
 diversas formas de hacerlo una de ella es en la misma pagina web donde la pagina web es la que contiene
 vulnerabilidades a explotar, recuerden que el puerto por donde
 efectuan las paginas sulen ser el puerto <b>80 http</b>.</p>
-<p><font color="yellow">[*]</font> Tipos de scaneo</p>
+<p><font color="yellow">[*]</font> Tipos de scaneo:</p>
 * Tcp
 * Udp
 <p>El mas comun el cual usamos es el tcp y en este caso usaremos el protocolo tcp.</p>
