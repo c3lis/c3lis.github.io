@@ -39,7 +39,7 @@ trap ctrl_c INT
 <p>La parte donde hace  <b>\e[31m</b>  significa que quiere empezar una secuencia de color en este caso el rojo muy importante cada
 vez que utilizamos esto debe ir cerrado <b>\e[0m</b> ya que de lo contrario el codigo dara errores</p>
 [Pudes encontrar mas informacion aqui](https://medium.com/linux-tips-101/bash-script-con-salida-en-colores-82bab9263998)
-<p><font color="yellow">[*] </font>Empezaremo ahora a desrrollar el script : </p>
+<p><font color="yellow">[*] </font>Empezaremos ahora a desrrollar el script : </p>
 ```#!/bin/bash
 
 for x in $(seq 1 65536); do
@@ -48,7 +48,7 @@ for x in $(seq 1 65536); do
 done
 
 ```
-<p><font color="yellow">[*]</font> Como puden ver hice un ford, en donde x almacenaba una variable de una secuencia de :
+<p><font color="yellow">[*]</font> Como puden ver hice un <b>for</b>, en donde x almacenaba una variable de una secuencia de :
 <b> 1 a 65536 </b> que si recuerdan es la cantiadad de puertos en total  que hay demtro de un servidor.
 con el comando timeout controlo el tiempo de espera de un comando, en este caso para el comando :  </p>
 ```#!/bin/bash
