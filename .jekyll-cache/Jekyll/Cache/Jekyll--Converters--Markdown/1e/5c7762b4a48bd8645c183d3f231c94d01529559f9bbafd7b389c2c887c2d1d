@@ -1,0 +1,404 @@
+I"�Y<p>Hola aqui estara mi blog donde les mostrare lo que aprendo cada dia, y algunas cosas que ya tengo en cuenta pero que les quiero compartir.</p>
+<p>Me pudes contactar por Facebook -&gt; <a href="https://www.facebook.com/santiagodavid.alvaradocelis">aqui</a></p>
+
+<hr />
+<p><br /></p>
+<p><font color="yellow">[<font color="red">*</font>]</font> <b> : Creacion de usuario y permisos.</b></p>
+<p><br /></p>
+<p><font color="yellow">[<font color="red">*</font>]</font><font color="lime"> Reconocimiento en un sistema</font></p>
+<p>En linux podemos enumerar los usario activos en el sistema con un par de comandos :</p>
+<pre><code class="language-#!/bin/bash">cat /etc/passwd | grep "sh$" | awk 'NF{print $1}' FS=':'
+</code></pre>
+
+<p><font color="yellow">[<font color="red">*</font>]</font> Creacion de usuarios en el sistema : </p>
+<p> Esto es un poco importante ya que este pude ser un vector de vulnerabilidad a explotar.</p>
+<p><b>Creacion de usuario :</b></p>
+<pre><code class="language-1">sudo mkdir /home/usuario1 &amp;&amp; useradd -d /home/usuario1 -s /bin/bash usuario1
+</code></pre>
+<p>Creamos carpeta y posteriormente el usuario. <b>Resumen:</b></p>
+
+<ul>
+  <li>
+    <p>-d siginifica la carpeta del nuevo usuario.</p>
+  </li>
+  <li>
+    <p>-s la shell por defecto para el nuevo usuario en este caso<b> usuario1</b>.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+<p> Para ponerle propietario a usuario1 ejecutamos :</p>
+<pre><code class="language-1">sudo chown root:usario1 usuario1
+</code></pre>
+<p> En este caso <font color="red">Root</font> es el propietario, para <b>eliminar el usuario simplemente</b> : </p>
+<pre><code class="language-1">sudo userdel usuario1
+</code></pre>
+<hr />
+<p><font color="yellow">[<font color="red">*</font>]</font> Permisos</p>
+
+<p>Permisos sobre un archivo este se puede <b>resumir</b> en lo siguiente</p>
+<ul>
+  <li>
+    <p>r -&gt; Pude leer el fichero [ read ].</p>
+  </li>
+  <li>
+    <p>w -&gt; Puede escrbir el fichero [ read ].</p>
+  </li>
+  <li>
+    <p>x -&gt; pude ejuctar el archivo [ executable ] o <b> Directorio</b> le permite entonces entrar al directorio.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+<p><b>E</b>stos permisos se dividen en 3 secciones, en este caso es usaremos como ejemplo este permiso:</p>
+<p><code class="language-plaintext highlighter-rouge">rwx-rwx-rwx</code></p>
+<p>El cual, esto se pude resumir en :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rxw rxw rxw
+ p   g   o
+</code></pre></div></div>
+<p> <font color="yellow">[<font color="red">*</font>]</font> Donde : </p>
+
+<ul>
+  <li>
+    <p>p -&gt; Corresponde al propietario.</p>
+  </li>
+  <li>
+    <p>g -&gt; Grupos del propietario.</p>
+  </li>
+  <li>
+    <p>o -&gt; Cualquier otra persona.</p>
+  </li>
+</ul>
+
+<p><br />
+Es decir si este permiso estubiera activo ahora <code class="language-plaintext highlighter-rouge">rwx-rwx-rwx</code> en un archivo, todos tendrian permiso de lectura, escritura, ejecucion.</p>
+
+<font color="lime"><font color="yellow">[<font color="red">*</font>]</font> 2022-07-29</font>
+<p><b>P</b>ara los grupos en concreto sea crea de la siguiente forma :</p>
+<pre><code class="language-1">groupadd grupo1
+</code></pre>
+<p>Podemos ver el grupo con :</p>
+<pre><code class="language-1">cat /etc/group
+</code></pre>
+<p>En la ultima linea estara el grupo que creamos.</p>
+<p><br /></p>
+
+<p>Para ponerle a un determinado <b>grupo</b> un directorio o fichero se hace de la siguienete forma : </p>
+<pre><code class="language-1">chgrp grupo1 directorio1
+</code></pre>
+<p>Para añadir a un determinado usuario al grupo se hace de la siguiente manera :</p>
+<pre><code class="language-1">usermod -a -G grupo1 usuario1
+</code></pre>
+<p><font color="yellow">[<font color="red">*</font>]</font> Donde : </p>
+<ul>
+  <li>
+    <p><font color="">a</font> -&gt; Añadir.</p>
+  </li>
+  <li>
+    <p><font color="">G </font>-&gt; Grupo.</p>
+    <p><br /></p>
+  </li>
+</ul>
+
+<p>Para ver si el grupo corresponde al usuario podemos hacer :</p>
+<pre><code class="language-1">id usuario1
+</code></pre>
+<p>En la parte final estara en un parentesis su grupo, podemos hacer tambien :</p>
+<pre><code class="language-1">id usario1 | tr '()' '\n' | grep "Aqui su grupo a buscar"
+</code></pre>
+<p>Una variante de chmod es chattr el cual nos permite efectuar permisos avanzados, esta variante que vamos a hacer
+es para que ni <font color="red">Root</font> puede eliminar el archivo creado  entonces : </p>
+<pre><code class="language-1">chattr +i -V ejemplo.txt
+</code></pre>
+<p><font color="yellow">[<font color="red">*</font>]</font> Donde:</p>
+<ul>
+  <li>
+    <p>+i -&gt; Quiero añadir una flag.</p>
+  </li>
+  <li>
+    <p>-V -&gt; Verbose, es decir muestrame por pantalla los cambios efectuados.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+<p> Ahora si hacemos ls -l no vamos a mirar el permiso creado. Para verlo solo se hace con el siguiente comando : </p>
+<pre><code class="language-1">lsattr ejemplo.txt
+</code></pre>
+<p>Veremos solo una <font color="yellow"> --i-- </font> que es el respectivo permiso asignado,
+lo que hace  que <b>repito</b> ni <font color="red">Root</font> pueda eliminar ese archivo.</p>
+
+<p>Para eliminar el archivo solo tenemos que quitar el permiso entonces para eso :</p>
+<pre><code class="language-1">sudo chattr -i -V ejemplo.txt
+</code></pre>
+<p>De esta manera ya pudes hacerle el <code class="language-plaintext highlighter-rouge">rm -rf ejemplo.txt</code> y te deberia dejar.</p>
+<p></p>
+<hr />
+<p><br /></p>
+<h3><font color="yellow">[<font color="red">*</font>]</font><font color="lime"> Explotacion y vulnerabilidad de permisos.</font></h3>
+<p><font color="yellow"></font> Explotacion por SUID : </p>
+<p>Un vector potencial de ataque, donde si hay un comando el cual el propietario es <font color="red">Root</font>
+y tenemos permisos <b>SUID</b> sobre un comando, el cual por parametros sea capas de poder ejecutar un comando, podemos
+crear una shell como <font color="red">Root</font> sin proporcionar contraseñas.</p>
+
+<p><font color="yellow">[<font color="red">*</font>]</font> Localisamos un comando que sea de propietario <font color="red">Root</font> y que en este caso sea capas de ejecutar comandos en este caso usare
+el comando <font color="blue">find</font> el cumple con los requisitos. Ya que</p>
+<ul>
+  <li>El propietario es root.</li>
+  <li>Con el parametro <code class="language-plaintext highlighter-rouge">-exec</code> que me permite ejecutar comandos.</li>
+</ul>
+
+<p><br /></p>
+<p>Empezamos viendo los permisos que tiene y su ruta que en mi caso se aloja en la ruta <font color="blue">/usr/bin/find</font>
+de seguido miramos sus permisos, para ello :</p>
+<pre><code class="language-1">which find | xargs ls -l
+</code></pre>
+<p>Aparecera algo asi : </p>
+<p><code class="language-plaintext highlighter-rouge">r--rwxr-x root root 259 KB Wed Feb  2 05:55:26 2022  /usr/bin/find</code></p>
+
+<p>Si observan en los permisos que tiene, no aparece el SUID que se representa con una  <code class="language-plaintext highlighter-rouge">s</code> para ello si queremos otorgarles permisos de <font color="blue">SUID</font> hacemos :</p>
+<pre><code class="language-1">sudo chmod 4775 /usr/bin/find
+</code></pre>
+<p>Claro para otorgarle permisos se necesita de usario <font color="red">Root</font> pero esto solo por una vez, si hacemos de nuevo <code class="language-plaintext highlighter-rouge">which find | xargs ls -l</code> vemos que en los permisos ya aparece la letra <code class="language-plaintext highlighter-rouge">s</code> algo asi :</p>
+<p></p>
+<p><code class="language-plaintext highlighter-rouge">.rwsrwxr-x root root 259 KB Wed Feb  2 05:55:26 2022  /usr/bin/find</code></p>
+<p>Ya con esto tendriamos una shell un puerta donde nos metemos como <font color="red">Root</font> sin proporcionar contraseña</p>
+<p>para crearnos una <a href="https://www.google.com/search?client=firefox-b-d&amp;q=ReverseShell">ReverseShell</a>
+como <font color="Red">Root</font> hacemos :</p>
+<pre><code class="language-1">find . -exec /bin/bash -p \; -quit
+</code></pre>
+<p>y nos creara una ReverseShell como <font color="red">Root</font> siendo cualquier usuario del sistema.
+Para revertir el cambio, y que ya ninguno puda crearce un shell como <font color="red">Root</font> ejecutas el siguiente comando :</p>
+<pre><code class="language-1">chmod 775 /usr/bin/find
+</code></pre>
+<hr />
+
+<p>podemos buscar tambien permisos <font color="blue">SUID</font> con el comando :</p>
+<pre><code class="language-1">find / \-perm -4000 2&gt;/dev/null
+</code></pre>
+<p><font color="yellow">[<font color="red">*</font>]</font> Donde : </p>
+
+<ul>
+  <li>
+    <p>find / -&gt; Es el comando que usaremos para buscar los permisos desde la rais.</p>
+  </li>
+  <li>
+    <p>-perm -&gt; Indicamo que queremos buscar los permisos.</p>
+  </li>
+  <li>
+    <p>-4000 -&gt; Le decimos que queremos buscar permisos <font color="blue">SUID</font>.</p>
+  </li>
+  <li>
+    <p>2&gt;/dev/null -&gt; Claro como nosotros no somos usarios privilegiados es decir que no tenemos permisos esos errores los dirigimos a la <code class="language-plaintext highlighter-rouge">/dev/null</code>
+<br /></p>
+  </li>
+</ul>
+
+<hr />
+<h4>Mini span</h4>
+<p> Para los que no sepan la <font color="blue">/dev/null</font> es como la papelera de <font color="yellow">Windows</font> a diferencia que en esta (papelera) no pudes recuperar lo que le hayas 
+mandado.</p>
+
+<p>El comando <code class="language-plaintext highlighter-rouge">&gt;</code> es de redireccion es
+decir el comando puede servir para redirigir el flujo y salida de un programa, comando, archivo, etc..  por lo que si hacemos:</p>
+
+<pre><code class="language-1">ifconfig &gt; texto.txt
+</code></pre>
+<p>Y si miramos el archivo con un <code class="language-plaintext highlighter-rouge">cat</code> el <font color="blue">texto.txt</font> Simplemente tendra todo lo que le iba a arrojar el comando ifconfig.</p>
+
+<p>Para los que no sepan los errores en <font color="orange">Linux</font> se representan con el numero  <font color="blue">"2"</font> de cierta forma entonces tenemos control
+de los errores lo que hace el comando <code class="language-plaintext highlighter-rouge">2&gt;/dev/null</code> es mandar los errores <font color="blue">"2"</font> a la basura <font color="blue">/dev/null</font>.</p>
+
+<p></p>
+<p>El comando <code class="language-plaintext highlighter-rouge">&gt;&gt;</code> se usa comun menta para sobre escribir archivos es decir si haces :</p>
+<pre><code class="language-1">echo "hola como estas" &gt;&gt; texto2.txt
+</code></pre>
+<p>te posicionara lo que le hayas pasado por <code class="language-plaintext highlighter-rouge">echo</code> en una linea del codigo por lo tanto si vulves a repetir el comando :</p>
+<pre><code class="language-1">echo "hola estoy bien" &gt;&gt; texto2.txt
+</code></pre>
+<p>Se posicionara dentro del archivo sin borrar lo que este adentro.</p>
+
+<p>A diferecia del comando <code class="language-plaintext highlighter-rouge">&gt;</code> este si te elimina lo que este adentro,
+pero queda lo que tu le hayas pasado.</p>
+
+<p><a href="https://www.google.com/search?client=firefox-b-d&amp;q=redireccionamiento+de+errores+en+linux">puedes encontrar mas informacion descriptiva aqui.</a></p>
+
+<h4> Fin del span</h4>
+
+<hr />
+
+<p></p>
+<p><b>E</b>n lo que ibamos estabamos buscando permisos <font color="blue">SUID</font> siendo un usario no priveligiado es decir
+no tener los <font color="red">permisos</font> para poder listar directorios dentro de la raiz.</p>
+
+<p>Pues resulta que si logramos ver un comando <em>“que afin de cuenta no es un comando sino un binario pero
+le diremos comando para no confundir”</em>, que tenga ejucucion de comandos y que de ese lado podamos inyectar codigo sin proporcionar
+contraseñas pues ya tendriamos mas privilegios en la maquina.</p>
+
+<hr />
+
+<p></p>
+<font color="yellow">[<font color="red">*</font>]</font>
+<font color="lime"> Hashes del sistema :</font>
+<p> En linux los hashes que para los que no sepan una hash es la contraseña de un _usuario, dominio, hosts, etc </p>
+
+<p>quedan situados en una ruta del sistema, para los nuevos que estan aprendiendo, hay que aclarar que estamo usando <font color="yellow">Linux</font> y no
+<font color="yellow">Windows</font> ya que en <font color="yellow">Windows</font> Son otras rutas.</p>
+<p></p>
+
+<p>Retomando lo de los <font color="red">Hashes</font> estos estan situados en una raiz del sistema la cual es <font color="blue">/etc/shadow</font> pero el cual necesitamos permisos para hacerle un cat.</p>
+
+<p>Si queremos ver que encriptamiento usan podemos hacer el comando:</p>
+<pre><code class="language-1">cat /etc/login.defs | grep "ENCRYPT_METHOD"
+</code></pre>
+<p>Estos hashes se puden romper con herramientas como la de <font color="red">john the riper</font> el cual nos permite crakearlas.</p>
+
+<p><font color="yellow">[<font color="red">*</font>]</font> Vamos a romper esos hashes.</p>
+<p> Nosotros tenemos un diccionario llamado <font color="red">rockyou</font> que podemos encontrarlo en la siguiente ruta, 
+haciendo el comando :</p>
+<pre><code class="language-1">cd /usr/share/wordlists/ &amp;&amp; ls
+</code></pre>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwjt1NfEjp_5AhX7fTABHfA1BDsQFnoECA0QAQ&amp;url=https%3A%2F%2Fgithub.com%2Fbrannondorsey%2Fnaive-hashcat%2Freleases%2Fdownload%2Fdata%2Frockyou.txt&amp;usg=AOvVaw3snAERl1mU6Ccr4WFEazBd">En el caso de que no lo tengan puden descargarlo aqui y moverlo a la ruta /usr/share/wordlists/</a></p>
+
+<p>En este caso usaremos el diccionarion mencionado pero no necesariamente tiene que ser este. En este caso rompere este hash:</p>
+<pre><code class="language-1">usuario1:$6$YBUPtV26YKQ5ApPR$jOBAdkGRTNE6.IXHT8BEgdtyj6lGptnY8/ALVYOKgSRb7UiYUHDGTJpeY9IIJ8nt.31H5Ty2ZhZikvjHHOUXQ0:19202:0:99999:7:::
+</code></pre>
+<p>La cual la contraseña es <code class="language-plaintext highlighter-rouge">123456</code>, que si la buscamos en el <font color="red">rockyou</font> con el siguiente comando</p>
+<pre><code class="language-1">cat /usr/share/wordlists/rockyou.txt | grep "123456" -n
+</code></pre>
+<p> En mi caso aparece la contraseña en la linea 1.</p>
+<p>Para crakerla debemos copiar el hash deseado y meterlo a un txt en este caso mis hash estar en el archivo hash</p>
+<p>Para crackearla simplemente haces:</p>
+<pre><code class="language-1">john --wordlist=/usr/share/wordlists/rockyou.txt hash
+</code></pre>
+<p>Una vez crakeada ejecutamos el comando </p>
+<pre><code class="language-1">john --show hash
+</code></pre>
+<p> Veran la contraseña seguido de los 2 puntos donde apareces el nombre del usuario, claro si les da errores es porque no
+ha podido crackerla con el diccionario algo asi : </p>
+<p><img src="screenshots/Diario/john.jpg" /></p>
+
+<hr />
+
+<p><font color="yellow">[<font color="red">*</font>]</font> Identificador de hashes</p>
+<p> Herramienta de identificacion de  hashes :</p>
+<ul>
+  <li>hashid</li>
+</ul>
+
+<p>Para <font color="yellow">linux</font></p>
+
+<pre><code class="language-1">sudo apt-get install hashid
+</code></pre>
+
+<p>Para <font color="yellow">arch-linux</font></p>
+
+<pre><code class="language-1">paru -S hash id
+</code></pre>
+
+<p><font color="yellow">[<font color="red">!</font>]</font> para los que no tengan <font color="blue">paru</font> en su arch-linux :</p>
+
+<pre><code class="language-1">git clone https://aur.archlinux.org/paru.git &amp;&amp; cd paru &amp;&amp; makepkg -si &amp;&amp; yay -S paru
+</code></pre>
+<p><font color="blue">hashid</font> Funcionalidad :</p>
+<pre><code class="language-1">hashid  Cualquierhash
+</code></pre>
+<hr />
+<p><br /></p>
+<p><font color="yellow">[<font color="red">*</font>]</font> Abusar del permiso de escritura para volverte <font color="red">Root</font></p>
+
+<p>Una forma de muchas es si tenemos permisos de escritura en <font color="blue">/etc/passwd</font> o <font color="blue">/etc/shadow</font>
+podemos abusar de esto para cambiar la contraseña de <font color="red">Root.</font></p>
+
+<p>Te lo explico, en <font color="yellow">Linux</font> si hacemos  <code class="language-plaintext highlighter-rouge">su root</code>, va a verificar en el <code class="language-plaintext highlighter-rouge">/etc/passwd/</code> si se encuentra el
+usuario <font color="red">Root</font> y si se encuentra entonces me deja colocar la contraseña, de lo contrario me dira que
+el usuario no existe, aqui la contraseña de <font color="red">Root</font> esta en el archivo <code class="language-plaintext highlighter-rouge">/etc/shadow</code> encriptada, pero
+en el archivo <code class="language-plaintext highlighter-rouge">/etc/passwd</code> es al lado seguido de los <code class="language-plaintext highlighter-rouge">:</code> donde <code class="language-plaintext highlighter-rouge">x</code> da una señal para que leea el <code class="language-plaintext highlighter-rouge">/etc/shadow</code> el hash de ese respectivo usuario,
+luego si la contraseña es correcta te deja entrar de lo contrario dira contraseña incorrecta, pero que pasa si
+cambiamos la <code class="language-plaintext highlighter-rouge">x</code> en <code class="language-plaintext highlighter-rouge">/etc/passwd</code> para que no leea el archivo <code class="language-plaintext highlighter-rouge">/etc/shadow/</code> sino que mas bien leea el que le pasemos directamente
+por el <code class="language-plaintext highlighter-rouge">/etc/passwd</code> para cambiar la <code class="language-plaintext highlighter-rouge">x</code>  por un sha que lo vamos a generar con el comando <code class="language-plaintext highlighter-rouge">openssl</code> burlaremos la seguridad.
+creamos el sha con openssl:</p>
+<pre><code class="language-1">openssl passwd
+</code></pre>
+<p>Nos pide una contraseña para crear el <code class="language-plaintext highlighter-rouge">sha</code> en este caso la contraseña que le puse fue la de <code class="language-plaintext highlighter-rouge">comida</code>
+luego nos arroja un tipo de hash el cual tendremos que copiar para remplazarlo por la <code class="language-plaintext highlighter-rouge">x</code> en el archivo <code class="language-plaintext highlighter-rouge">/etc/passwd</code>.</p>
+
+<p><img src="screenshots/Diario/openssl.jpg" /></p>
+
+<p>como puden ver ya genere con <code class="language-plaintext highlighter-rouge">openssl</code> el <code class="language-plaintext highlighter-rouge">sha</code> y lo puse al lado del usuario <font color="red">Root</font> en el archivo <code class="language-plaintext highlighter-rouge">/etc/passwd/</code> ahora si hago
+un <code class="language-plaintext highlighter-rouge">sudo su</code> y proporciono la contrseña que genere con el <code class="language-plaintext highlighter-rouge">openssl</code> que fue en mi caso <code class="language-plaintext highlighter-rouge">comida</code> pues ya nos logiariamos como <font color="red">Root.</font></p>
+
+<hr />
+
+<p><font color="lime">[*] 2022-07-30</font></p>
+<p><font color="yellow">[<font color="red">*</font>]</font> <font color="lime">Creacion de tareas para ejecutarce en un determinado tiempo</font></p>
+<p> Para ejecutar una tarea en un determinado tiempo se usa la herramienta crom</p>
+<ul>
+  <li>Si estas en arch puedes que no la tengas instalada para eso :
+    <pre><code class="language-1">paru -S crom &amp;&amp; sudo systemctl anable cronie.service
+</code></pre>
+  </li>
+  <li>Si no tienes paru en tu arhc-linux :
+    <pre><code class="language-1">git clone https://aur.archlinux.org/paru.git &amp;&amp; cd paru &amp;&amp; makepkg -si &amp;&amp; yay -S paru
+</code></pre>
+  </li>
+</ul>
+<p><font color="yellow">[<font color="red">*</font>]</font> Posterior mente si queremos ver si esta activo, inactivo etc, entonces :</p>
+
+<p><code class="language-plaintext highlighter-rouge">systemctl status cronie.service</code> Mirara el estado de <font color="blue"> Cron</font>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">systemctl start cronie.service</code> Prendera el servicio <font color="blue"> Cron</font>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">systemctl stop cronie.service</code> Para el servicio <font color="blue"> Cron</font>.</p>
+
+<p> Si estas en linux y te arroja problema es probable que aun no tengas activadO <font color="red">(de raiz)</font> el servicio <font color="blue">cron </font>para ello : </p>
+<pre><code class="language-1">sudo systemctl anable cronie.service
+</code></pre>
+<p><a href="https://stackoverflow.com/questions/1802337/how-to-install-cron">Si sigue presentado problemas puede solocionarlo aqui.</a></p>
+
+<p><br /></p>
+<p><font color="yellow">[<font color="red">*</font>]</font> Esta herramienta <font color="blue">Cron</font> te permite ejecutar herramientas en un determinado tiempo.</p>
+<p> Para hacer crear una nueva tarea se hace lo siguiente</p>
+<p>Posteriormente te tienes que ir a la <font color="blue">ruta</font> : </p>
+<pre><code class="language-1">/etc/cron.d/
+</code></pre>
+<p><font color="yellow">*</font> Posteriormente creamos el archivo que se va a ejecutar, y de contenido le colocamos esto : </p>
+<pre><code class="language-1">* * * * root /home/s4ntiago/mesa/ejecutame.sh
+</code></pre>
+<p><b><font color="yellow">*</font></b> Si observan hay unos <code class="language-plaintext highlighter-rouge">* * * * *</code> estos controlan el tiempo en el que se ejecutara la tarea es decir :</p>
+
+<p><font color="yellow">[<font color="red">*</font>]</font><font color="yellow"> Donde :</font></p>
+<ul>
+  <li>
+    <p><font color="yellow"> *  *  *  *  *</font> -&gt; Siginfica que la tarea se ejecutara cada minuto.</p>
+  </li>
+</ul>
+<p><font color="yellow">[<font color="red">*</font>]</font> Aqui les dejare una imagen para el control de los tiempos <font color="blue"> Cron</font>:</p>
+<p><img src="screenshots/Diario/crontime.jpg" />
+<br /></p>
+
+<p><font color="yellow">*</font> Luego esta la palabra <font color="red">Root</font> siginifica que el usario <font color="red">Root</font> ejecutara esta tarea durante cada minuto. </p>
+<p><b><font color="yellow">*</font></b> Luego hay una ruta en mi caso es la de : <code class="language-plaintext highlighter-rouge">/home/s4ntiago/mesa/ejecutame.sh</code> donde estara el script que se ejecutara durante cada minuto.</p>
+
+<p> Ya luego lo que este en esa ruta el cron lo ejecutara segun el tiempo que le hayas colacado</p>
+<p><br /></p>
+
+<hr />
+<p><font color="yellow">[<font color="red">*</font>]</font> Para ver las tareas que se estan ejecutando a tiempo real se usa el <font color="blue">comando</font> : </p>
+<pre><code class="language-1">ps -eo command
+</code></pre>
+
+<p><font color="yellow">[<font color="red">*</font>]</font> Script en <font color="red">bash</font> para ver las tareas que se estan ejecutando a tiempo real no necesita de privilegios <font color="red">Root</font> :</p>
+
+<pre><code class="language-1">#!/bin/bash
+
+a=$(ps -eo command)
+while true ;do
+	b=$(ps -eo command)
+	diff &lt;(echo "$a") &lt;(echo "$b") | grep "[\&gt;\&lt;]"
+	a=$b
+done
+
+</code></pre>
+
+:ET
