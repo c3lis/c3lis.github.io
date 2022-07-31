@@ -1,0 +1,69 @@
+I"b<font color="lime">2022-07-30</font>
+
+<p>Nmap para reconcer puertos activos en una maquina o un <font color="blue">Hosts.</font></p>
+
+<p><font color="yellow">[<font color="red">*</font>]</font><font color="yellow"> Tipos de scaneos : </font></p>
+
+<ul>
+  <li>TCP
+    <pre><code class="language-1">nmap --min-rate 5000 -sS -n --open -vvv -Pn 8.8.8.8 -o allports
+</code></pre>
+  </li>
+</ul>
+<p>Es un scaneo normal, el cual es el que siempre usamos</p>
+
+<ul>
+  <li>UDP
+    <pre><code class="language-1">nmap --min-rate 5000 -sS -sU -open -vvv -Pn 8.8.8.8 -o allports
+</code></pre>
+  </li>
+</ul>
+<p>Aqui el factor a destacar para que se convierta en un scaneo <font color="blue"> UDP</font> es la opcion <font color="yellow">-sU.</font></p>
+
+<p><br /></p>
+<p><font color="yellow">[<font color="red">*</font>]</font> Para scaneo de servicios de puertos:</p>
+
+<pre><code class="language-1">nmap --min-rate 5000 -sCV -n -v -o allservices
+</code></pre>
+<hr />
+
+<p><br /></p>
+<p><font color="yellow">[<font color="red">*</font>]</font>Scripts de nmap : </p>
+<p> Comando para ver todos los cripts de nmap</p>
+<pre><code class="language-1">locate .nse 
+</code></pre>
+<p>Si no tiene locate en su <font color="yellow">Arch-linux </font>: </p>
+<pre><code class="language-1">pacman -S locate &amp;&amp; updatedb
+</code></pre>
+<p>Si no tiene <font color="blue">locate </font>en <font color="yellow">Linux</font></p>
+<pre><code class="language-1">sudo apt-get install locate &amp;&amp; updatedb
+</code></pre>
+
+<hr />
+
+<p><br />
+<b><font color="yellow">[<font color="red">*</font>]</font></b> Ver lo que hace el script <font color="blue">http-enum</font> por detras :&lt;/p&gt;
+<b><font color="yellow">Nos ponemos en escucha con nuestra interfaz que usa linux por defecto en mi caso es la</font></b> <code class="language-plaintext highlighter-rouge">lo</code>, pueden ver la suya con el comando
+<code class="language-plaintext highlighter-rouge">lo</code>.</p>
+<pre><code class="language-1">tcpdump -i lo -w captura.cap
+</code></pre>
+<p>En otra terminal hacemos un scaneo utilizando el script <code class="language-plaintext highlighter-rouge">http-enum</code>, yo lo lanzare con mi localhots para que sea mas rapido.</p>
+<pre><code class="language-1">nmap --script http-enum localhot
+</code></pre>
+
+<p>En la otra terminal con el tcpdump veremos ya la captura para mirarla hacemos el comando</p>
+<pre><code class="language-1">tshark -r captura.cap
+</code></pre>
+<p>Veremos un monton de <font color="blue"> informacion</font> para filtrar por lo que nos interesa para eso <font color="blue">tshark</font>
+tiene para metros de busqueda que es con la letra <code class="language-plaintext highlighter-rouge">-Y</code> y filtrare por <code class="language-plaintext highlighter-rouge">http</code> con el parametro <code class="language-plaintext highlighter-rouge">-Tjson</code> queremos que no los muestre
+en formato json.</p>
+
+<pre><code class="language-1">tshark -Y "http" -Tjson captura.cap
+</code></pre>
+
+<p>Nos mostrara unas cosas no tan relevantes para filtrar el campo que nos interesa es uno llamado <code class="language-plaintext highlighter-rouge">tcp.payload</code>, para ello se
+hace uso del parametro <code class="language-plaintext highlighter-rouge">-Tfields -e tcp.payload</code> el cual estara en <font color="blue">hexadecimal</font> para convertir de <font color="blue">hexadecimal</font> a legible se usa
+una funcion llamada <code class="language-plaintext highlighter-rouge">xxd</code> la cual si la concatenamos con el resultado anterior con el parametro <code class="language-plaintext highlighter-rouge">| xxd -ps -r</code> pues ya veromos
+las peticiones que tramita nmap.</p>
+
+:ET
