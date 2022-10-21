@@ -16,14 +16,14 @@ efectuan las paginas sulen ser el puerto <b>80 http</b>.</p>
 <p><font color="yellow">[*]</font> Tipos de scaneo:</p>
 * Tcp
 * Udp
-<p>El mas comun el cual usamos es el tcp y en este caso usaremos el protocolo tcp.</p>
+<p>El mas comun el cual usamos diariamente es el tcp, y en este caso usaremos el protocolo tcp.</p>
 [mas informacion aqui](https://www.google.com/search?client=firefox-b-d&q=scaneo+tcp+y+udp)
 
 -------
 <br>
 <h3><font color="yellow">[*]</font><font color="green"> Empezamos :</font></h3>
 <p><font color="yellow"></font> Creamos un script en bash con una funcion, que nos ayudara a que la estetica del script
-mejore, lo que hace la funcion es para cuando oprimamos ctrl + c, el script no muestre tantos errores.</p>
+mejore, lo que hace la funcion es para cuando oprimamos ctrl + c, el script no muestre tantos errores asi de esta manera controlar el flujo de los errores.</p>
 
 
 <p><font color="yellow">[*]</font> El codigo de la funcion  <b>Para el control de las salidas</b>: </p>
