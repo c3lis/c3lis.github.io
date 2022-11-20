@@ -21,13 +21,14 @@ efectuan las paginas sulen ser el puerto <b>80 http</b>.</p>
 
 -------
 <br>
-<h3><font color="yellow">[*]</font><font color="green"> Empezamos :</font></h3>
+<center><font color="yellow">[<font color="red">*</font>]</font><font color="green"> ScanPorts </font></center>
+<br>
 <p><font color="yellow"></font> Creamos un script en bash con una funcion, que nos ayudara a que la estetica del script
 mejore, lo que hace la funcion es para cuando oprimamos ctrl + c, el script no muestre tantos errores asi de esta manera controlar el flujo de los errores.</p>
 
 
 <p><font color="yellow">[*]</font> El codigo de la funcion  <b>Para el control de las salidas</b>: </p>
-```#!/bin/bash
+```bash
 #!/bin/bash
 
 function ctrl_c(){
@@ -36,37 +37,43 @@ function ctrl_c(){
 }
 trap ctrl_c INT
 ```
+<br>
+
 <p>La parte donde hace  <b>\e[31m</b>  significa que quiere empezar una secuencia de color en este caso el rojo muy importante cada
 vez que utilizamos esto debe ir cerrado <b>\e[0m</b> ya que de lo contrario el codigo dara errores</p>
 [Pudes encontrar mas informacion aqui](https://medium.com/linux-tips-101/bash-script-con-salida-en-colores-82bab9263998)
 <p><font color="yellow">[*] </font>Empezaremos ahora a desrrollar el script : </p>
-```#!/bin/bash
 
+```bash
 for x in $(seq 1 65536); do
 
                 timeout 1 bash -c "echo '' > /dev/tcp/$1/$x"  && echo -e "Port Open: $x";
 done
 
 ```
+<br>
 <p><font color="yellow">[*]</font> Como puden ver hice un <b>for</b>, en donde x almacenaba una variable de una secuencia de :
 <b> 1 a 65536 </b> que si recuerdan es la cantiadad de puertos en total  que hay demtro de un servidor.
 con el comando timeout controlo el tiempo de espera de un comando, en este caso para el comando :  </p>
-```#!/bin/bash
+```bash
 echo '' > /dev/tcp/$1/$x
 ```
+<br>
 
-<h3><font color="yellow">[*]</font><font color="lime"> Donde: </font></h3>
-* $1   Es   El segundo digito al ejecutar el script es decir:
-```#!/bin/bash
-	./scanPorts.sh 8.8.8.8
+<p><font color="yellow">[*]</font> Donde: </p>
+--> $1   Es   El segundo digito al ejecutar el script es decir:
+```bash
+./scanPorts.sh 8.8.8.8
 ```
-* $x  Es   la variable donde alamaceno el comando:
-```#!/bin/bash
-   seq 1 65535
+<br>
+--> $x  Es   la variable donde alamaceno el comando:
+```bash
+  seq 1 65535
 ```
+<br>
 
 <p><font color="yellow">[*]</font> Y los && significa si el comando anterior fue correcto entonces ejecutame esto, en este caso:</p>
-````#!/bin/bash
+```bash
 echo -e "Port Open :$x"
 ```
 <p><font color="yellow">[*]</font> La <b>-e</b> siginifica que le quieres indicar a echo que quieres incluir caracteres especiales
@@ -74,7 +81,7 @@ aqui el caracter especial es <b>$x (seq 1 65536).</b></p>
 
 <p><font color="yellow">[*]</font> Resultado del script : </p>
 
-```#!/bin/bash
+```bash
 #!/bin/bash
 
 function ctrl_c(){
