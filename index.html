@@ -1,13 +1,12 @@
 ---
 layout: default
 ---
-
+<meta http-equiv="Refresh" content="0; url='/archive'" />
 <ul>
     {% for post in paginator.posts %}
       <li>
           <h3><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"><font color="blue">{{ post.title }}</font></a></h3>
           <h5><font color="yellow"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time></h5></font>
-          <p><h4><font color="white">{{ post.content | strip_html | truncatewords:18 }}</font></p></h4>
       </li>
     {% endfor %}
 </ul>
