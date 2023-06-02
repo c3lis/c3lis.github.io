@@ -117,4 +117,15 @@ init $1
 <img src="/imgs/lazyAdmin/lazyAdmin7.jpg"/>
 <br><br>
 <p>Vemos el usuario y la contraseña....jejej.</p>
-<p>Ahora solo queda logearnos</p>
+* <p>Ahora desencryptemos el hash anteriormente.</p>
+> john --format=Raw-MD5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+<img src="/imgs/lazyAdmin/lazyAdmin8.jpg"/>
+<br><br>
+<p>contraseña mas debil jejeje</p>
+<p>Ahora ya podemo ingresar al login de la pagina web</p>
+<img src="/imgs/lazyAdmin/lazyAdmin9.jpg"/>
+<p>Ahora nos vamos al apartado de anuncios </p>
+<img src="/imgs/lazyAdmin/lazyAdmin10.jpg"/>
+<p>Ahora solo colocamos un codigo php que me de una web shell en este caso coloco : </p>
+
+
