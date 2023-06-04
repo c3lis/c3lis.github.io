@@ -8,7 +8,7 @@ published : True
 > Url : <a href="https://tryhackme.com/room/picklerick"> Pickle Rick </a>
 <p></p>
 ---
-
+<h2><font color="white"><center># pickleRick</center></font></h2>
 <p>Empezaremos viendo a que sistema operativo nos enfrentamos.</p>
 <img src="/imgs/pickleRick/pickleRick1.jpg"/>
 <p> Vemos que el ttl es de 63 lo cual hace referencia a una maquina linux, ahora veremos que puertos estan abiertos.</p>

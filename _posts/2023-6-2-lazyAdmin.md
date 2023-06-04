@@ -8,6 +8,7 @@ published : True
 <p>Url : <a href="https://tryhackme.com/room/lazyadmin"> LazyAdmin</a></p>
 <p></p>
 ---
+<h2><font color="white"><center># lazyAdmin</center></font></h2>
 * <p>Empezamos con el reconocimiento de la maquina</p>
 > ping -c 1 IP
 <img src="/imgs/lazyAdmin/lazyAdmin0.jpg"/>
