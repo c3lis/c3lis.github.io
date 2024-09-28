@@ -19,7 +19,7 @@ efectuan las paginas sulen ser el puerto <b>80 http</b>.</p>
 <p>El mas comun el cual usamos diariamente es el tcp, y en este caso usaremos el protocolo tcp.</p>
 [mas informacion aqui](https://www.google.com/search?client=firefox-b-d&q=scaneo+tcp+y+udp)
 
--------
+
 <br>
 <center><font color="yellow">[<font color="red">*</font>]</font><font color="green"> ScanPorts </font></center>
 <br>

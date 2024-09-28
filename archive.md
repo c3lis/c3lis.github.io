@@ -2,15 +2,17 @@
 layout: page
 title: Archive
 ---
-
+<div style="padding-top: 10px;">
+	<div style="background-color: black; color: white;">
 <section>
   {% if site.posts[0] %}
 
     {% capture currentyear %}{{ 'now' | date: "%Y" }}{% endcapture %}
     {% capture firstpostyear %}{{ site.posts[0].date | date: '%Y' }}{% endcapture %}
     {% if currentyear == firstpostyear %}
-        <h3>This year's posts</h3>
-    {% else %}  
+         <h3>{{ firstpostyear }}</h3>
+
+    {% else %}
         <h3>{{ firstpostyear }}</h3>
     {% endif %}
 
@@ -36,3 +38,4 @@ title: Archive
 
   {% endif %}
 </section>
+</div>

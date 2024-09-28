@@ -3,10 +3,10 @@ title : Anonymous
 published : True
 ---
 <p></p>
----
+
 <p>Nombre de la maquin : <font color="yellow"> Anonymous</font></p>
 <p>Url : <a href="https://tryhackme.com/room/anonymous">Anonymous</a></p>
----
+<br>
 <h2><font color="white"><center># Anonymous</center></font></h2>
 * <p>Empezamos con el reconocimiento de la maquina.</p>
 > ping -c 1 10.10.51.98
@@ -68,8 +68,8 @@ hay nodos intermedirias por la cual pasa nuestra peticion para poder tener comun
 <br>
 <br>
 `Como podemos ver cree un archivo llamado clean.sh que tiene una reverse shell y la subi a la maquina con el comando put clean.sh`
-* Como es una tarea cron debemos entender que nos tocara esperar un rato para poder que el script se ejecute.
-> Despues de estar esperando un rato.....
+* <p>Como es una tarea cron debemos entender que nos tocara esperar un rato para poder que el script se ejecute.</p>
+> Despues de estar esperando un rato.
 <img src="/imgs/anonymous/anonymous12.jpg"/>
 <p>Ahora escalamos privilegios, vemos que comandos con permisos SUID podemos ejecutar</p>
 > find /usr perm +6000 | grep '\/usr'
@@ -79,7 +79,6 @@ hay nodos intermedirias por la cual pasa nuestra peticion para poder tener comun
 
 * <p> Escalamos privilegios con el binario /usr/bin/env </p>
 > /usr/bin/env /bin/sh -p
-<br>
 <img src="/imgs/anonymous/anonymous15.jpg"/>
 <p>OK maquina vulnerada</p>
 

@@ -22,7 +22,7 @@ fi
 
 function init(){
 	function listener(){
-		sudo openvpn /home/anonimo/Documentos/tryhackme/vpn/s4ntiagood.ovpn &>/dev/null &
+		#sudo openvpn /home/anonimo/Documentos/tryhackme/vpn/s4ntiagood.ovpn &>/dev/null &
 		jekyll serve --watch --port 80 &>/dev/null & 
 		mkdir /home/anonimo/.www/h4cker-0.github.io/imgs/$1 2>/dev/null &>/dev/null && echo -e "\e[33;1mCarpeta Name \e[0m\e[35;1m $1\e[0m";
 	}

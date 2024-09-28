@@ -2,5 +2,4 @@
 layout: page
 title: About
 ---
-
-Something about me.
+Temas para repasar nada mas.

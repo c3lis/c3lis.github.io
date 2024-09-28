@@ -1,31 +1,94 @@
-
-@import "rouge-base16-dark";
-@import "default_colors";
-
-$body-background: $cod-grey !default;
-$body-foreground: $gallery !default;
-$header: $conifer !default;
-$blockquote-color: $silver-chalice !default;
-$blockquote-border: $dove-grey !default;
+/*
+   original: https://github.com/pages-themes/hacker 
+*/
+.highlight {
+  color: #d0d0d0;
+}
+.highlight table td {
+  padding: 5px;
+}
+.highlight table pre {
+  margin: 0;
+}
+.highlight .w {
+  color: #d0d0d0;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #888;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #f4bf75;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc, .highlight .kt, .highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si, .highlight .se {
+  color: #8f5536;
+}
+.highlight .nt, .highlight .nn, .highlight .nc, .highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
 
 body {
   margin: 0;
-  padding: 0;
-  background: $body-background url("../assets/bkg.png") 0 0;
-  color: $body-foreground;
+  padding: 0px 200px 0px;
+  background: black;
+  color: #eaeaea;
   font-size: 16px;
   line-height: 1.5;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
 
 /* General & 'Reset' Stuff */
-
 .container {
+  padding: 30px 100px 80px;
+  border: 1px solid black; 
+  border-radius: 20px !important; 
+  box-shadow: 0 1px 19px gray; 
+  overflow: hidden;
+  color: white;
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
 }
-
 
 section {
   display: block;
@@ -37,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 li {
-  line-height: 1.4 ;
+  line-height: 1.4;
 }
 
 /* Header, <header>
@@ -48,8 +111,8 @@ li {
 
 header {
   background: rgba(0, 0, 0, 0.1);
-  border-bottom: 1px dashed $conifer; //header;
-  padding: 20px;
+  border-bottom: 1px dashed #b5e853;
+  padding: 5px;
   margin: 0 0 40px 0;
 }
 
@@ -68,51 +131,55 @@ header h1 {
   text-align: center;
   font-weight: bold;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: $conifer;//$header;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
-               0 0 5px rgba(181, 232, 83, 0.1),
-               0 0 10px rgba(181, 232, 83, 0.1);
-  letter-spacing: -1px;
+  color: #b5e853;
+  text-shadow: 1 1px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(181, 232, 83, 0.1), 0 0 10px rgba(181, 232, 83, 0.1);
+  letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
 }
 
 header h2 {
   font-size: 18px;
   font-weight: 300;
-  color: #666;
+  color: #FFFFFF;
 }
 
 /* Main Content
 */
-
 #main_content {
   width: 100%;
   -webkit-font-smoothing: antialiased;
+
 }
+
 section img {
-  max-width: 100%
+  max-width: 100%;
+  border: 1px solid black; /* Bordes de 5px, color negro */
+  border-radius: 10px;    /* Bordes redondeados */
+  box-shadow: 0px 0px 15px gray; /* Sombra */
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: $header;
+  color: #b5e853;
   letter-spacing: -0.03em;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
-               0 0 5px rgba(181, 232, 83, 0.1),
-               0 0 10px rgba(181, 232, 83, 0.1);
+  text-shadow: 100 1px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(181, 232, 83, 0.1), 0 0 10px rgba(181, 232, 83, 0.1);
 }
 
 #main_content h1 {
   font-size: 30px;
+
 }
 
 #main_content h2 {
-  font-size: 24px;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-shadow: 0 2px 10px red;
 }
-
 #main_content h3 {
-  font-size: 18px;
+  font-size: 14px;
+  color: #FFC0CB;
+  text-shadow: 0 0 20px pink;
 }
 
 #main_content h4 {
@@ -129,7 +196,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px;
   text-transform: uppercase;
   color: #999;
-  margin: 0 0 5px 0;
+ 
 }
 
 dt {
@@ -138,15 +205,14 @@ dt {
 }
 
 ul li {
-  list-style-image:url('../assets/bullet.png');
+  list-style-image: url("../assets/bullet.png");
 }
 
 blockquote {
-  color: $blockquote-color;
-  padding-left: 10px;
-  border-left: 1px dotted $blockquote-border;
+  color: pink;
+  padding-left: 15px;
+  border-left: 1px dotted #666;
 }
-
 pre {
   background: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -160,7 +226,7 @@ pre {
 }
 
 code.highlighter-rouge {
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 0px 3px;
   margin: 0px -3px;
@@ -192,7 +258,6 @@ hr {
 
 /* Buttons
 */
-
 .btn {
   display: inline-block;
   background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.3), rgba(35, 35, 35, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3));
@@ -200,7 +265,7 @@ hr {
   border-radius: 50px;
   border: 2px solid rgba(0, 0, 0, 0.7);
   border-bottom: 2px solid rgba(0, 0, 0, 0.7);
-  border-top: 2px solid rgba(0, 0, 0, 1);
+  border-top: 2px solid rgb(0, 0, 0);
   color: rgba(255, 255, 255, 0.8);
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
@@ -230,7 +295,6 @@ hr {
 /* Links
    a, a:hover, a:visited
 */
-
 a {
   color: #63c0f5;
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
@@ -239,26 +303,24 @@ a {
 a:active, a:focus {
   outline: 0;
   border: none;
-  -moz-outline-style: none
+  -moz-outline-style: none;
 }
 
 /* Clearfix */
-
 .cf:before, .cf:after {
-  content:"";
-  display:table;
+  content: "";
+  display: table;
 }
 
 .cf:after {
-  clear:both;
+  clear: both;
 }
 
 .cf {
-  zoom:1;
+  zoom: 1;
 }
 
 /* Make footer stick to bottom */
-
 .pagination, footer {
   height: 50px;
   line-height: 50px;
@@ -268,3 +330,5 @@ a:active, a:focus {
 #wrapper {
   min-height: calc(100vh - 100px);
 }
+
+/*# sourceMappingURL=main.css.map */
