@@ -76,7 +76,7 @@
 
 body {
   margin: 0;
-  padding: 0px 100px 0px;
+  padding: 0px 10px 0px;
   background: black;
   color: #eaeaea;
   font-size: 16px;
@@ -86,7 +86,7 @@ body {
 
 /* General & 'Reset' Stuff */
 .container {
-  padding: 30px 100px 80px;
+  padding: 10px 10px 10px;
   border: 1px solid black; 
   border-radius: 20px !important; 
   box-shadow: 0 1px 19px gray; 
@@ -95,6 +95,7 @@ body {
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
+  
 }
 
 section {
@@ -217,7 +218,7 @@ ul li {
 
 blockquote {
   color: pink;
-  padding-left: 15px;
+  padding-left: 0px;
   border-left: 1px dotted #666;
 }
 pre {

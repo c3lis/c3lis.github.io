@@ -2,7 +2,7 @@
 layout: page
 title: Archive
 ---
-<div style="padding-top: 10px;">
+<div style="padding-top: 0px;">
 	<div style="background-color: black; color: white;">
 <section>
   {% if site.posts[0] %}
