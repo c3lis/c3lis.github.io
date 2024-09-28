@@ -4,6 +4,13 @@
 .highlight {
   color: #d0d0d0;
 }
+
+@media only screen and (max-width: 600px) {
+  .contenedor {
+    padding: 20px;
+  }
+}
+
 .highlight table td {
   padding: 5px;
 }
