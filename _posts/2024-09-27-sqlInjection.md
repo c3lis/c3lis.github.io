@@ -7,8 +7,8 @@ published: true
 * MariaDb sql:
 <br>
 <p>		* Use <font color="lime">anonsruf </font>para no ser detectado</p>
-<p>	    * Mire los valores de simbolos en hexadecimal con <font color="lime">man ascii</font></p>
-<p> 	* Mas informacion de sql en cuanto a codigo respecta <a href="https://portswigger.net/web-security/sql-injection/cheat-sheet"> aqui </a></p>
+<p>	    * Mire los valores de símbolos en hexadecimal con <font color="lime">man ascii</font></p>
+<p> 	* Mas información de sql en cuanto a código respecta <a href="https://portswigger.net/web-security/sql-injection/cheat-sheet"> aquí </a></p>
 <p> 	* Mas laboratorios de pentesting : <a href="https://portswigger.net/web-security/all-labs">aqui</a></p>
 <br>
 ```python
@@ -36,7 +36,7 @@ select * from [table_name]; # Muestra todo el contenido de una tabla.
 insert into users(username, password, vip) values("admin", "adminpass$!-?", "No aplica"); # Insertar valores en una tabla creada.
 
 where = done.
-select = seleccion.
+select = selección.
 from = de.
 
 	* SQL INJECTION
