@@ -2,7 +2,7 @@
 title : Fuzzing-Web
 published : True
 ---
-* Fuzzing en paginas web - reconocimiento de archivos.
+* Fuzzing en paginas web.
 <p></p>
 <br>
 ```python

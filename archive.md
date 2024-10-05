@@ -2,20 +2,23 @@
 layout: page
 title: Archive
 ---
-<div style="padding-top: 0px;">
+
+
+ <div style="padding-top: 0px;">
 	<div style="background-color: black; color: white;">
 <section>
+
   {% if site.posts[0] %}
 
     {% capture currentyear %}{{ 'now' | date: "%Y" }}{% endcapture %}
-    {% capture firstpostyear %}{{ site.posts[0].date | date: '%Y' }}{% endcapture %}
+    {% capture firstpostyear %}{{ site.posts[0].date | date: "<font color='gray'>un post ma' mi gente pa' toos' ustedes!</font>" }}{% endcapture %}
     {% if currentyear == firstpostyear %}
          <h3>{{ firstpostyear }}</h3>
 
     {% else %}
         <h3>{{ firstpostyear }}</h3>
     {% endif %}
-
+<p><font color="red" style="text-shadow: 0px 0px 10px white;" >c3lis</font></p>
     {%for post in site.posts %}
       {% unless post.next %}
         <ul>
@@ -24,17 +27,18 @@ title: Archive
         {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
         {% if year != nyear %}
           </ul>
-          <h3>{{ post.date | date: '%Y' }}</h3>
+          <h3>{{ post.date | date: ' ' }}</h3>
           <ul>
         {% endif %}
       {% endunless %}
-        <li><time>{{ post.date | date:"%d %b" }} - </time>
+        <li><time>{{ post.date | date:" " }}  </time>
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             {{ post.title }}
           </a>
         </li>
     {% endfor %}
     </ul>
+
 
   {% endif %}
 </section>
