@@ -1,5 +1,5 @@
 ---
-title : Lazy Admin
+title : Maquina [ Lazy Admin ]
 published : True
 ---
 <p></p>

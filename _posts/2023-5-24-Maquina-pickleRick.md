@@ -1,5 +1,5 @@
 ---
-title : pickle Rick
+title : Maquina [ Pickle Rick ]
 published : True
 ---
 

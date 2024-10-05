@@ -1,5 +1,5 @@
 ---
-title : Blue
+title : Maquina [ Blue ]
 published : True
 ---
 
