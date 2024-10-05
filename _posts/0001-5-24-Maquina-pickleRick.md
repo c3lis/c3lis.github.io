@@ -1,9 +1,9 @@
 ---
-title : Maquina [ Pickle Rick ]
+title : Máquina|<font color="#5d9b9b">Pickle Rick</font>
 published : True
 ---
 
-<p>Maquina a vulnerar Pickle Rick</p>
+<p>Nombre : Pickle Rick</p>
 > Url : <a href="https://tryhackme.com/room/picklerick"> Pickle Rick </a>
 <p></p>
 

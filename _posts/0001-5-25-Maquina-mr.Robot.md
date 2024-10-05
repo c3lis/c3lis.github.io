@@ -1,9 +1,9 @@
 ---
-title: Maquina [ Mr Robot ]
+title: Máquina|<font color="#5d9b9b">Mr Robot</font>
 published : true
 ---
 
-<p>Maquina para vulnerar : <bold> mr.Robot </bold> </p>
+<p>Nombre : Mr.Robot </p>
 > Url : <a href="https://tryhackme.com/room/mrrobot">Mr.Robot</a>.
 <p></p>
 

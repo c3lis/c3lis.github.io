@@ -1,5 +1,5 @@
 ---
-title : Fuzzing-Web
+title : Fuzzing Web
 published : True
 ---
 * Fuzzing en paginas web.

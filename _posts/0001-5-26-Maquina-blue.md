@@ -1,9 +1,9 @@
 ---
-title : Maquina [ Blue ]
+title : Máquina|<font color="#5d9b9b">Blue</font>
 published : True
 ---
 
-<p>Maquina : Blue</p>
+<p>Nombre : Blue</p>
 <p>Url : <a href="https://tryhackme.com/room/blue">Blue</a></p>
 <p></p>
 

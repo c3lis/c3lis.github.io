@@ -1,9 +1,9 @@
 ---
-title : Maquina [ Lazy Admin ]
+title : Máquina|<font color="#5d9b9b">Lazy Admin</font>
 published : True
 ---
 <p></p>
-<p>Name : LazyAdmin</p>
+<p>Nombre : LazyAdmin</p>
 <p>Url : <a href="https://tryhackme.com/room/lazyadmin"> LazyAdmin</a></p>
 <p></p>
 

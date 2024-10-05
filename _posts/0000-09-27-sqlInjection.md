@@ -1,5 +1,5 @@
 ---
-title: sqlInjection
+title: SQL Injection
 published: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: PythonScripting
+title: Python Scripting
 published: true
 ---
 <p><font color="yellow">[<font color="red">*</font>]</font><font color="lime"> sáb 26 nov 2022</font></p>

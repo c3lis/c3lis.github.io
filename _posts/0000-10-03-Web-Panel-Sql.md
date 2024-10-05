@@ -1,5 +1,5 @@
 ---
-title : Web-Panel-Sql
+title : SQL Web Panel
 published : True
 ---
 * <p> Sql injection en panel de login</p>

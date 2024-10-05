@@ -1,10 +1,10 @@
 ---
-title : Maquina [ Anonymous ]
+title : Máquina|<font color="#5d9b9b">Anonymous</font>
 published : True
 ---
 <p></p>
 
-<p>Nombre de la maquina : <font color="yellow"> Anonymous</font></p>
+<p>Nombre: Anonymous</p>
 <p>Url : <a href="https://tryhackme.com/room/anonymous">Anonymous</a></p>
 <br>
 <h2><font color="white"><center># Anonymous</center></font></h2>
