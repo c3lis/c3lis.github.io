@@ -4,7 +4,7 @@ published : true
 ---
 
 * <p>Nombre : Mr.Robot </p>
-> Url : <a href="https://tryhackme.com/room/mrrobot">Mr.Robot</a>.
+Url : <a href="https://tryhackme.com/room/mrrobot">Mr.Robot</a>.
 >
 
 <h2><font color="white"><center># mr.Robot</center></font></h2>

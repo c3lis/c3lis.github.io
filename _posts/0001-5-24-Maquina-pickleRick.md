@@ -4,7 +4,8 @@ published : True
 ---
 
 * <p>Nombre : Pickle Rick</p>
-> Url : <a href="https://tryhackme.com/room/picklerick"> Pickle Rick </a>
+Url : <a href="https://tryhackme.com/room/picklerick"> Pickle Rick </a>
+
 >
 
 <h2><font color="white"><center># pickleRick</center></font></h2>
