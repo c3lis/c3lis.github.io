@@ -71,7 +71,7 @@ hay nodos intermediarias por la cual pasa nuestra petición para poder tener com
 * <p>Como es una tarea cron debemos entender que nos tocara esperar un rato para poder que el script se ejecute.</p>
 > Despues de estar esperando un rato.
 <img src="/imgs/anonymous/anonymous12.jpg"/>
-<p>Ahora escalamos privilegios, vemos que comandos con permisos SUID podemos ejecutar</p>
+* <p>Ahora escalamos privilegios, vemos que comandos con permisos SUID podemos ejecutar</p>
 > find /usr perm +6000 | grep '\/usr'
 <img src="/imgs/anonymous/anonymous14.jpg"/>
 <br><br>

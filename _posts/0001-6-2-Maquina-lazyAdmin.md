@@ -42,7 +42,7 @@ published : True
 <img src="/imgs/lazyAdmin/lazyAdmin6.jpg"/>
 <br><br>
 `Ahora si vemos el archivo descargado podemos ver que hay un usuario llamado "manager" y la contraseña encriptada en MD5`
-<p>Por cierto pensé en la gente y desarrolle este <font color="red">exploit</font> el cual te automatiza todo.</p>
+* <p>Por cierto pensé en la gente y desarrolle este <font color="red">exploit</font> el cual te automatiza todo.</p>
 
 ```bash
 #!/bin/bash
@@ -116,17 +116,17 @@ init $1
 * <p>Que por cierto si lo ejecutamos...</p>
 <img src="/imgs/lazyAdmin/lazyAdmin7.jpg"/>
 <br><br>
-<p>Vemos el usuario y la contraseña....jejej.</p>
+`Vemos el usuario y la contraseña.`
 * <p>Ahora desencriptar el hash anteriormente.</p>
 > john --format=Raw-MD5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 <img src="/imgs/lazyAdmin/lazyAdmin8.jpg"/>
 <br><br>
-<p>contraseña mas débil jejeje.</p>
-<p>Ahora ya podemos ingresar al login de la pagina web.</p>
+`contraseña débil.`
+* <p>Ahora ya podemos ingresar al login de la pagina web.</p>
 <img src="/imgs/lazyAdmin/lazyAdmin9.jpg"/>
-<p>Ahora nos vamos al apartado de anuncios.</p>
+* <p>Ahora nos vamos al apartado de anuncios.</p>
 <img src="/imgs/lazyAdmin/lazyAdmin10.jpg"/>
-<p>Ahora solo colocamos un codigo php que me de una web Shell. </p>
+* <p>Ahora solo colocamos un codigo php que me de una web Shell. </p>
 <img src="/imgs/lazyAdmin/lazyAdmin11.jpg"/>
 * <p>Ahora vamos a la url, donde se cargo el archivo php en este caso es en  <font color="yellow">http://localhost/content/inc/ads/( nombre de archivo).php</font></p>
 <img src="/imgs/lazyAdmin/lazyAdmin12.jpg"/>

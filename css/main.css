@@ -163,7 +163,7 @@ section img {
   max-width: 100%;
   border: 1px solid black; /* Bordes de 5px, color negro */
   border-radius: 10px;    /* Bordes redondeados */
-  box-shadow: 0px 0px 15px gray; /* Sombra */
+  box-shadow: 0px 0px 25px gray; /* Sombra */
 }
 
 h1, h2, h3, h4, h5, h6 {
