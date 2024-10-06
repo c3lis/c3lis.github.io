@@ -1,5 +1,5 @@
 ---
-title: Máquina|<font color="#5d9b9b">Mr Robot</font>
+title: Máquina|Mr Robot
 published : true
 ---
 

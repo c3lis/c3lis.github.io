@@ -1,5 +1,5 @@
 ---
-title : Máquina|<font color="#5d9b9b">Lazy Admin</font>
+title : Máquina|Lazy Admin
 published : True
 ---
 <p></p>

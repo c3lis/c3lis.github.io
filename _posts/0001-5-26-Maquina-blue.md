@@ -1,5 +1,5 @@
 ---
-title : Máquina|<font color="#5d9b9b">Blue</font>
+title : Máquina|Blue
 published : True
 ---
 

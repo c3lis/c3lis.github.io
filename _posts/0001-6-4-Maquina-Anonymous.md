@@ -1,5 +1,5 @@
 ---
-title : Máquina|<font color="#5d9b9b">Anonymous</font>
+title : Máquina|Anonymous
 published : True
 ---
 <p></p>

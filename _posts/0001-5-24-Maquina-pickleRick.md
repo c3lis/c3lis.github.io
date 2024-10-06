@@ -1,5 +1,5 @@
 ---
-title : Máquina|<font color="#5d9b9b">Pickle Rick</font>
+title : Máquina|Pickle Rick
 published : True
 ---
 
