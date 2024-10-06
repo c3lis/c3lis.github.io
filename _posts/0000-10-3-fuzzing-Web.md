@@ -3,7 +3,7 @@ title : Fuzzing Web
 published : True
 ---
 * Fuzzing en paginas web.
-<p></p>
+<br>
 <br>
 ```python
 #Enumeración de archivos finalizados en : .php .xml .conf

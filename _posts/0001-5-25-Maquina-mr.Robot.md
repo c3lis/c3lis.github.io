@@ -226,7 +226,7 @@ function printit ($string) {
 * <p>El hash al decifrarlo solo era un mensaje de la [a-z]. 
 Ahora usemos ese mensaje decifrado para convertirnos en el usuario robot del sistema, y ver en que permisos de aplicaciones del sitema nos puede ayduar
 para escalar privilegios.</p>
-
+>
 <img src="/imgs/mrRobot/mrRobot17.png"/>
 
 * <p>Veamos Si tenemos permssos UID por root con el que podamos aprovecharnos</p>
