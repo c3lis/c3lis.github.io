@@ -43,7 +43,7 @@ hay nodos intermediarias por la cual pasa nuestra petición para poder tener com
 `-L Print share files -->> Hace referencia a que nos muestre archivos compartidos`
 <br><br>
 `En el comando anterior vemos un archivo compartido llamado pics`
-* <p>Miremos que hay dentro de esa carpeta compartida</p>
+* <p>Miremos que hay dentro de esa carpeta compartida.</p>
 > smbclient -N //10.01.51.98/pics
 <img src="/imgs/anonymous/anonymous4.jpg"/>
 <br><br>
@@ -70,7 +70,7 @@ hay nodos intermediarias por la cual pasa nuestra petición para poder tener com
 <img src="/imgs/anonymous/anonymous9.jpg"/>
 <br><br>
 `Vemos que hay un archivo llamado clean.sh el cual al ver un archivo nuevo lo elimina de lo contrario dice "Nothing to delete", al ver el archivo removed_files.log vemos una cantidad de lineas, con lo que podemos intuir que hay una tarea cron que ejecuta el archivo`
-* <p>Nos damos cuenta que tenemos permiso de escritura frente al archivo clean.sh, asi que porque no remplazamos, todo el código por una reverse Shell?</p>
+* <p>Nos damos cuenta que tenemos permiso de escritura frente al archivo clean.sh, asi que porque no remplazamos, todo el código por una reverse Shell?.</p>
 > put [ File ] # para subir un archivo local a la maquina.
 <img src="/imgs/anonymous/anonymous11.jpg"/>
 <br>
@@ -79,7 +79,7 @@ hay nodos intermediarias por la cual pasa nuestra petición para poder tener com
 * <p>Como es una tarea cron debemos entender que nos tocara esperar un rato para poder que el script se ejecute.</p>
 > Despues de estar esperando un rato.
 <img src="/imgs/anonymous/anonymous12.jpg"/>
-* <p>Ahora escalamos privilegios, vemos que comandos con permisos SUID podemos ejecutar</p>
+* <p>Ahora escalamos privilegios, vemos que comandos con permisos SUID podemos ejecutar.</p>
 > find /usr perm +6000 | grep '\/usr'
 <img src="/imgs/anonymous/anonymous14.jpg"/>
 <br><br>
