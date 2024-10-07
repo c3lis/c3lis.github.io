@@ -5,9 +5,9 @@
   margin: 20px auto;  /* Centrando el cuadro */
   display: flex;  /* Usar flexbox para alinear elementos */
   align-items: center;  /* Centrar verticalmente */
-  color: white;  /* Color del texto */
+  color: red;  /* Color del texto */
   text-shadow: 5px 5px 20px white;
-  
+
 }
 
 .contenedor img {
