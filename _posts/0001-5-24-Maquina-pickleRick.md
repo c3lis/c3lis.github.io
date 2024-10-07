@@ -3,12 +3,18 @@ title : Máquina|Pickle Rick
 published : True
 ---
 
-* <p>Nombre : Pickle Rick</p>
-Url : <a href="https://tryhackme.com/room/picklerick"> Pickle Rick </a>
+
+<div class="contenedor">
+    <img src="imgs/pickleRick/pickleRick.jpg" width="160" alt="Cheese logo">
+    <div>
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Dificultad: Facil </p>
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Url: <a href="https://tryhackme.com/room/picklerick" style="color: lightblue;">PicleRick</a></p>
+    </div>
+</div>
 
 >
 
-<h2><font color="white"><center># pickleRick</center></font></h2>
+<h2><font color="white"><center># Pickle Rick</center></font></h2>
 * <p>Empezaremos viendo a que sistema operativo nos enfrentamos.</p>
 <img src="/imgs/pickleRick/pickleRick1.jpg"/>
 * <p> Vemos que el ttl es de 63 lo cual hace referencia a una maquina Linux, ahora veremos que puertos están abiertos.</p>

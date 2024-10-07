@@ -2,8 +2,8 @@
 title: Python Scripting
 published: true
 ---
-<p><font color="yellow">[<font color="red">*</font>]</font><font color="lime"> sáb 26 nov 2022</font></p>
-<p><center><font color="green">Shell Simulation, With Base64 Requests</font></center></p>
+* <p><font color="yellow">[<font color="red">*</font>]</font><font color="lime"> sáb 26 nov 2022</font></p>
+* <p><center><font color="green">Shell Simulation, With Base64 Requests</font></center></p>
 
 <b>
 
@@ -34,10 +34,10 @@ published: true
 
 ```
 <br>
-<p><font color="yellow">[<font color="red">*</font>]</font><font color="lime"> dom 27 nov 2022</font></p>
+* <p><font color="yellow">[<font color="red">*</font>]</font><font color="lime"> dom 27 nov 2022</font></p>
 <br>
 
-<p><center><font color="green">Exploit python3 reverseShell</font></center></p>
+* <p><center><font color="green">Exploit python3 reverseShell</font></center></p>
 
 ```python
 

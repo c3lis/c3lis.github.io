@@ -2,12 +2,18 @@
 title: Máquina|Mr Robot
 published : true
 ---
+<div class="contenedor">
+    <img src="imgs/mrRobot/mrRobot.png" width="160" alt="Cheese logo">
+    <div>
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Dificultad: Media </p>
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Url: <a href="https://tryhackme.com/room/mrrobot" style="color: lightblue;">MrRobot</a></p>
+    </div>
+</div>
 
-* <p>Nombre : Mr.Robot </p>
-Url : <a href="https://tryhackme.com/room/mrrobot">Mr.Robot</a>.
+
 >
 
-<h2><font color="white"><center># mr.Robot</center></font></h2>
+<h2><font color="white"><center># Mr.Robot</center></font></h2>
 * <p>Empezamos con el reconocimiento, en este caso la ip es : <bold>10.10.94.16</bold></p>
 > ping -c 1 10.10.94.16
 >

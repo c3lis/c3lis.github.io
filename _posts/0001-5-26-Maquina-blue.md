@@ -2,12 +2,16 @@
 title : Máquina|Blue
 published : True
 ---
+<div class="contenedor">
+    <img src="imgs/blue/blue.gif" width="160" alt="Cheese logo">
+    <div>
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Dificultad: Facil </p>
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Url: <a href="https://tryhackme.com/room/blue" style="color: lightblue;">Blue</a></p>
+    </div>
+</div>
 
-* <p>Nombre : Blue</p>
-* <p>Url : <a href="https://tryhackme.com/room/blue">Blue</a></p>
->
 
-<h2><font color="white"><center># blue</center></font></h2>
+<h2><font color="white"><center># Blue</center></font></h2>
 * <p>Empezaremos con el reconocimiento de la maquina</p>
 > ping -c 1 10.10.157.254
 >

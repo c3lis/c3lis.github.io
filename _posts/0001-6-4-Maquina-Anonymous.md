@@ -4,8 +4,16 @@ published : True
 ---
 <p></p>
 
-<p>Nombre: Anonymous</p>
-<p>Url : <a href="https://tryhackme.com/room/anonymous">Anonymous</a></p>
+ <div class="contenedor">
+    <img src="imgs/anonymous/anonymousLog.png" width="160" alt="Cheese logo">
+    <div>
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Dificultad: Media</p>
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Url: <a href="https://tryhackme.com/room/anonymous" style="color: lightblue;">Anonymous</a></p>
+    </div>
+</div>
+
+
+
 <br>
 <h2><font color="white"><center># Anonymous</center></font></h2>
 * <p>Empezamos con el reconocimiento de la maquina.</p>
