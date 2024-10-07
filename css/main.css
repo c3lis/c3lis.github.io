@@ -5,18 +5,13 @@
   margin: 20px auto;  /* Centrando el cuadro */
   display: flex;  /* Usar flexbox para alinear elementos */
   align-items: center;  /* Centrar verticalmente */
-  color: red;  /* Color del texto */
+  color: whitesmoke;  /* Color del texto */
   text-shadow: 5px 5px 20px white;
 
 }
 
 .contenedor img {
   margin-right: 30px; /* Espacio entre imagen y texto */
-}
-
-@font-face {
-  font-family: 'MiFuente';
-  src: url('font/HackNerdFontPropo-Regular.ttf') format('truetype');
 }
 
 .highlight {
@@ -101,7 +96,7 @@ body {
   color: #eaeaea;
   font-size: 16px;
   line-height: 1.5;
-  font-family: "Lucida Console"
+  font-family: "Lucida Console";
  /* Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;*/
 }
 
