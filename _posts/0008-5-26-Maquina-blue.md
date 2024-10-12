@@ -1,5 +1,5 @@
 ---
-title : Máquina|Blue
+title : Máquina|Blue|THM
 published : True
 ---
 <div class="contenedor">

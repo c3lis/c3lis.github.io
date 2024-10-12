@@ -1,5 +1,5 @@
 ---
-title : Máquina|Pickle Rick
+title : Máquina|Pickle Rick|THM
 published : True
 ---
 

@@ -1,5 +1,5 @@
 ---
-title : Máquina|Lazy Admin
+title : Máquina|Lazy Admin|THM
 published : True
 ---
  <div class="contenedor">

@@ -1,6 +1,5 @@
 ---
-title: Máquina|Mr Robot
-published : true
+title: Máquina|Mr Robot|THM
 ---
 <div class="contenedor">
     <img src="imgs/mrRobot/mrRobot.png" width="160" alt="Cheese logo">
