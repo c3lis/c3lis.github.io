@@ -1,0 +1,177 @@
+\documentclass[a4paper]{article} % Plantilla 
+
+%Uso de paquetes 
+\usepackage[utf8]{inputenc} % Codifica el archivo en utf-8
+\usepackage[spanish]{babel} % Codifica el archivo en utf-8
+\usepackage{graphicx} % inserción de imagenes.  
+\usepackage[table,xcdraw]{xcolor} %Definicion De Colores.
+\usepackage[most]{tcolorbox} % Para la creacion de cuadros.
+\usepackage[margin=2cm]{geometry} % Margen del informe ne general
+\usepackage{fancyhdr} % Define el estilo de la pagina.
+\usepackage[hidelinks]{hyperref} % Gestion de hipervinculos.
+\usepackage{parskip} %Arreglo de la tabulacion del documento.
+\usepackage[figurename=c3lis]{caption} %Cambiar el nombre del caption de las fotos.
+\usepackage{smartdiagram} % Para el insertado de diagramas.
+\usepackage{listing} % Para la inserción de codigo en el documento.
+\usepackage{zed-csp} % Para la inserción de esquemas.
+
+% Declaracion de colores
+\definecolor{green}{HTML}{CF010B}
+\definecolor{black}{HTML}{000000}
+
+% Declaracion de variables.
+%Imagenes.
+\newcommand{\logMachine}{img/logCheese.jpg}
+\newcommand{\logo}{img/tryhackme_log.png}
+%Variables de entorno.
+\newcommand{\machineName}{Cheese} % Nombre de la maquina.
+\newcommand{\startDate}{7 De Octubre Del 2024}
+
+%Adicionales
+% \addto\captionsspanish{\renewcommand{\contentsname}{Index}} Cambia la variable por defetcto que marca el indice.
+\setlength{\headheight}{80pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\includegraphics[width=4cm]{\logo}}\rhead{\includegraphics[height=3cm,keepaspectratio]{\logMachine}}
+\renewcommand{\headrulewidth}{3pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{green}\leaders\hrule height \headrulewidth\hfill}} % Cambie el color de la lineas del indice.
+\renewcommand{\lstlistingname}{codigo} % Para cambiar los captions de los. codigos.
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{ % Estilo por la importacion de un cuadro
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+
+
+%Comienzo del documento.
+\begin{document}
+	\cfoot{\thepage}
+	%----------------------------------------
+	%Creacion de la portada.
+	\begin{titlepage}	
+	\center
+	\includegraphics[width=0.5\textwidth]{\logo}\par\vspace{1cm}
+	{\scshape\LARGE\textbf{Informe Tecnico.}\par\vspace{0.3cm}}	
+	{\Huge\bfseries\textcolor{green}{Maquina \machineName}}\par
+	\vfill\vfill
+	\includegraphics[width=\textwidth,height=10cm,keepaspectratio]{\logMachine}\par\vspace{1cm}
+	\vfill
+	\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+		\center
+		\LARGE{Este documento es confidencial y contiene informacion sensible.\\Esta informacion no deberia compartirse con terceros.}
+	\end{tcolorbox}
+	\vfill
+	{\large\startDate\par}
+	\vfill 
+	\end{titlepage}
+	%---------------------------------------
+	% Comienzo del TOC
+	\clearpage
+	\tableofcontents
+	\clearpage
+	%---------------------------------------
+	
+	\section{Antecedentes}
+	El presente documentos recoge los resultados de la auditoria realizad a la maquina {\textbf \machineName} de la plataforma \href{https://tryhackme.com}{\textbf{\color{blue}TryHackme}}.
+	\vspace{0.4cm}
+	\begin{figure}[h]
+	\center
+	\includegraphics[width=\textwidth]{img/information_machine.png}
+	\caption{Detalles de la maquina.} %Texto debajo de la imagen. 
+	\end{figure}
+	
+	\vspace{0.3cm}
+	\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  		colback=blue!5!white,colframe=black!75!black,colbacktitle=black!80!black,
+		title=Url=\bfseries,
+ 		boxed title style={size=small,colframe=red!50!black} ]
+ 		\center
+		\href{https://tryhackme.com/r/room/cheesectfv10}{\color{black}{https://tryhackme.com/r/room/cheesectfv10}}
+	\end{tcolorbox}
+
+	\section{Objetivos}
+	Conocer el estado de actual de el servidor de \textbf{\machineName}, enumerando posbiles vectores de explotacion y determinando el alcance de impacto, que un atancante podria ocasionar en un sistema en produccion.
+	\subsection{Consideraciones} %Subseccion de la seccion.
+	Una vez finalizada las jornadas de auditoria se llevara a cabo un serie de saneamientos y buenas practicas con el objetivo de securizar el servidor he evitar ser victima de un futuro ataque.
+
+	\vspace{0.5cm}
+	\begin{figure}[h]
+	\begin{center}
+	\smartdiagram[priority descriptive diagram]{
+	Reconocimiento sobre el sistema,
+	Explotacion de vulnerabilidades,
+	Exploracion del sistema,
+	Securizacion del sistema.
+	}
+	\end{center}
+	\end{figure}
+	\clearpage
+	\section{Reconocimiento del sistema.}
+	\subsection{Reconocimiento Inicial.}
+	\vspace{0.3cm}
+	Se comenzo realizando un analizis inicial sobre el sistema verificando que el sistema obejetivo que puertos tiene abiertos.
+
+	\vspace{0.5cm}
+	\begin{figure}[h]	
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{img/reconocimiento.png}
+		\caption{Reconocimiento de puertos abiertos por el servidor.}
+	\end{center}
+	\end{figure}
+	\vspace{0.2cm}
+	
+	Asi mismo para evitar ciertos falsos positivos se construyo en bash un script en bash para verificar con exactitud la cantidad de puertos abiertos en el servidor.
+	\vspace{0.5cm}
+	\begin{lstlisting}[language=Bash, caption=Script]
+	#!/bin/bash
+	
+	for por in $(seq 1 6555);do
+		time out 1 bash -c "echo > /dev/tcp/10.10.118.129/$port" >/dev/null && echo "$port/tcp" &
+	done; wait 
+	\end{lstlisting}
+	\vspace{1cm}
+	A travez del anterior script es posbile detectar los siguientes puertos.
+	\begin{schema}{TCP}
+	Puertos
+	\where
+	22, 80, 4444
+	\end{schema}
+
+	\vspace{1cm}
+	Una vez finalizado el escaneo se detectaron la version y servicio que corrian bajo estos, representando a continuacion los puertos criticos los cuales fueron la continuidad a la explotacion del sistema.
+	
+	
+	\clearpage
+	\section{Explotacion de vulnerabilidades.}
+	\subsection{Codigo de panel vulnerable a ataque de Inyeccion SQL}
+	Posteriormente se empezo con el analizis de rutas existente por parte del puerto \textbf{80=HTTP} descubriendo que era susceptible a una ataque de inyeccion \textbf{SQL}.
+	\vspace{0.5cm}
+	\begin{figure}[h]
+	\center	
+		\includegraphics[width=0.8\textwidth]{img/vulnerabilidad.png}
+	\end{figure}
+		
+\end{document}
+
+
