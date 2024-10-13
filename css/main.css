@@ -1,6 +1,6 @@
 .contenedor {
   width: 750px;  /* Ancho del cuadro */
-  background-color: black;  /* Color de fondo */
+  background-color: #15171a;  /* Color de fondo */
   padding: 20px;  /* Espacio interno */
   margin: 20px auto;  /* Centrando el cuadro */
   display: flex;  /* Usar flexbox para alinear elementos */
@@ -9,6 +9,52 @@
   text-shadow: 5px 5px 20px white;
 
 }
+.cuadro {
+  display: inline-block;
+  padding: 5px;
+  backg2round-color: black;
+  width: 200px;
+  color: white;
+  border: 1px solid black;
+  font-size: 12px;
+  
+}
+
+.cuadro1 {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    vertical-align: middle;
+    box-shadow: 0 0 13px white;
+}
+
+
+.cuadro2 {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  vertical-alweb-shell.py
+
+  ign: middle;
+}
+
+.cuadro3 {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+  vertical-align: middle;
+}
+
+
+.ind {
+  text-indent: 30px; /* Define la cantidad de espacio para la indentación */
+}
+
+
+
 
 .contenedor img {
   margin-right: 30px; /* Espacio entre imagen y texto */
@@ -91,8 +137,8 @@
 
 body {
   margin: 0;
-  padding: 0px 10px 0px;
-  background: black;
+  padding: 0px 0px 0px;
+  background: #15171a;
   color: #eaeaea;
   font-size: 16px;
   line-height: 1.5;
@@ -103,16 +149,23 @@ body {
 /* General & 'Reset' Stuff */
 .container {
   padding: 10px 10px 10px;
+  
   border: 1px solid black; 
   border-radius: 20px !important; 
-  box-shadow: 0 1px 19px gray; 
+  
   overflow: hidden;
   color: white;
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
-  
+  position: relative;
+  border-top: none;
+  border-bottom: none;
 }
+
+
+
+
 
 section {
   display: block;
@@ -134,7 +187,7 @@ li {
 */
 
 header {
-  background: rgba(0, 0, 0, 0.1);
+  background: black;
   border-bottom: 1px dashed #b5e853;
   padding: 5px;
   margin: 0 0 40px 0;
@@ -176,10 +229,11 @@ header h2 {
 }
 
 section img {
+  
   max-width: 100%;
   border: 1px solid black; /* Bordes de 5px, color negro */
   border-radius: 10px;    /* Bordes redondeados */
-  box-shadow: 0px 0px 25px gray; /* Sombra */
+ /* Sombra */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -319,15 +373,15 @@ hr {
    a, a:hover, a:visited
 */
 a {
-  color: #63c0f5;
-  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+  /*color: #63c0f5;*/
+  
+  color: red;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline; /* Subrayado al pasar el mouse */
 }
 
-a:active, a:focus {
-  outline: 0;
-  border: none;
-  -moz-outline-style: none;
-}
 
 /* Clearfix */
 .cf:before, .cf:after {

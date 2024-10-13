@@ -1,11 +1,10 @@
 ---
 layout: page
-title: Archive
+title: archivve
 ---
 
-
  <div style="padding-top: 0px;">
-	<div style="background-color: black; color: white;">
+	<div style="background-color: #15171a; ">
 <section>
 
   {% if site.posts[0] %}
@@ -19,6 +18,10 @@ title: Archive
         <h3>{{ firstpostyear }}</h3>
     {% endif %}
 <p><font color="red" style="text-shadow: 0px 0px 10px white;" >c3lis</font></p>
+<!-- <pre font color="white" style='font-size: 11.5px;' >
+    <span class="cuadro1"></span> Difícil. <span class="cuadro2"></span> Medio. <span class="cuadro3"></span> Fácil.   
+</pre>
+!-->
     {%for post in site.posts %}
       {% unless post.next %}
         <ul>
@@ -27,6 +30,7 @@ title: Archive
         {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
         {% if year != nyear %}
           </ul>
+
           <h3>{{ post.date | date: ' ' }}</h3>
           <ul>
         {% endif %}

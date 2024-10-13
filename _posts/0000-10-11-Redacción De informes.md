@@ -1,5 +1,5 @@
 ---
-titled: Redacción De Informes
+title: Redacción De Informes 
 published : Trues
 ---
 <div class="contenedor">
@@ -47,7 +47,9 @@ published : Trues
 <br>
 <center># Instalación.</center>
 * Para comenzar vamos a instalar todas las dependecias a utilizar.
-> sudo apt-get install text-live-full zathura latexmk rubber -y --fix-missing
+```bash
+ sudo apt-get install text-live-full zathura latexmk rubber -y --fix-missing
+```
 >
 <img src="imgs/redaccionDeInformes/Cheese0.png">
 

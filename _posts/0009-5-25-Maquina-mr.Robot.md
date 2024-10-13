@@ -1,5 +1,6 @@
 ---
 title: Máquina|Mr Robot|THM
+published: True
 ---
 <div class="contenedor">
     <img src="imgs/mrRobot/mrRobot.png" width="160" alt="Cheese logo">
@@ -10,7 +11,6 @@ title: Máquina|Mr Robot|THM
 </div>
 
 
->
 
 <h2><font color="white"><center># Mr.Robot</center></font></h2>
 * <p>Empezamos con el reconocimiento, en este caso la ip es : <bold>10.10.94.16</bold></p>
