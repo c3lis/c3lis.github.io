@@ -158,12 +158,10 @@ body {
   border-radius: 20px !important; 
   overflow: hidden;
   color: white;
-  width: 70%;
-  margin: auto;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
   position: relative;
-  border-top: none;
-  border-bottom: none;
-
 }
 
 
