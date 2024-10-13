@@ -157,7 +157,7 @@ body {
   border-radius: 20px !important; 
   overflow: hidden;
   color: white;
-  width: 80%;
+  width: 70%;
   margin: auto;
   position: relative;
   border-top: none;
@@ -303,9 +303,6 @@ dt {
   font-weight: bold;
 }
 
-ul li {
-  list-style-image: url("../assets/bullet.png");
-}
 
 blockquote {
 
