@@ -121,6 +121,8 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
+  border-top: none;           /* Elimina el borde superior */
+  border-bottom: none;        /* Elimina el borde inferior */
 }
 
 
