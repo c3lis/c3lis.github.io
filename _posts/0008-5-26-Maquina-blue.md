@@ -46,5 +46,5 @@ por el puerto 444.</p>
 >
 <img src="/imgs/blue/blue8.jpg"/>
 * <p>Y listo si ejecutas el comando Shell, y pones whoami seras autority system.</p>
-* <p>Ok maquina vulnerada</p>
+
 
