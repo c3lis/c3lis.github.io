@@ -9,44 +9,6 @@
   text-shadow: 5px 5px 20px white;
 
 }
-.cuadro {
-  display: inline-block;
-  padding: 5px;
-  backg2round-color: black;
-  width: 200px;
-  color: white;
-  border: 1px solid black;
-  font-size: 12px;
-  
-}
-
-.cuadro1 {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: green;
-    vertical-align: middle;
-    box-shadow: 0 0 13px white;
-}
-
-
-.cuadro2 {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  vertical-alweb-shell.py
-
-  ign: middle;
-}
-
-.cuadro3 {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: yellow;
-  vertical-align: middle;
-}
 
 
 .ind {
@@ -56,13 +18,10 @@
 
 
 
-.contenedor img {
+.contenedor {
   margin-right: 10px; /* Espacio entre imagen y texto [!] No eliminar*/ 
-
+  
 }
-
-
-
 
 .highlight {
   color: #d0d0d0;
@@ -230,14 +189,31 @@ header h2 {
 }
 
 section img {
-  max-width: 100%;
-  border-radius: 12px;
-  transition: transform 0.5s ease; /* Transición suave para el zoom */
+  
+  width: 700px;               /* Ancho fijo para todas las imágenes */
+  height: auto;               /* Altura automática para mantener la proporción */
+  max-width: 100%;            /* Asegúrate de que las imágenes no excedan el ancho del contenedor */
+  object-fit: cover;          /* Mantiene la proporción de la imagen, cortando si es necesario */
+  border-radius: 10px;        /* Bordes redondeados */
+  transition: transform 0.3s ease; /* Transición suave para el zoom */
+  
 }
 
 section img.zoom {
-  transform: scale(1.2); /* Aumenta el tamaño de la imagen al hacer clic */
+  transform: scale(1.2);      /* Aumenta el tamaño de la imagen al hacer clic */
+  z-index: 10;                 /* Asegura que la imagen se muestre por encima de otros elementos */
 }
+
+.imgc {
+  /* Mantener los estilos específicos que desees aquí */
+  border-radius: 12px;  
+       /* Bordes redondeados */
+  transition: transform 0.3s ease; /* Transición suave para el zoom */
+  max-width: 100%;   
+  margin-right: 20px;         /* Asegúrate de que la imagen no exceda el ancho del contenedor */
+}
+
+
 
 .overlay {
   position: fixed;

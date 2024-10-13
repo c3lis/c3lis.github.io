@@ -2,14 +2,14 @@
 title : Máquina|Lazy Admin|THM
 published : True
 ---
- <div class="contenedor">
-    <img src="imgs/lazyAdmin/lazyAdmin.png" width="160" alt="Cheese logo">
-    <div>
-        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Dificultad: Facil </p>
-        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Url: <a href="https://tryhackme.com/room/lazyadmin" style="color: lightblue;">LazyAdmin</a></p>
+
+<div class="contenedor imgc">
+    <img class="imgc" src="imgs/lazyAdmin/lazyAdmin.png" style="width: 169px" alt="Cheese logo">
+    <div> 
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Dificultad: Fácil </p>
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Url: <a href="https://tryhackme.com/room/lazyadmin" style="color: lightblue;">Lazy Admin</a></p>
     </div>
 </div>
-
 
 <h2><font color="white"><center># LazyAdmin</center></font></h2>
 * <p>Empezamos con el reconocimiento de la maquina</p>
@@ -30,23 +30,29 @@ published : True
 <br>
 <br>
 `Vemos que hay un directorio llamado content.`
+
 * <p>Miremos que trae ese directorio.</p>
+>
 <img src="/imgs/lazyAdmin/lazyAdmin3.jpg"/>
-<br><br>
+<br>
 `Vemos que en su sistema usa SweetRice el cual miraremos si tiene vulnerabilidades.`
+
+<br>
 * <p>Miremos si tiene vulnerabilidades el sistema que tiene en uso.</p>
 > searchsploit sweetrice
 <img src="/imgs/lazyAdmin/lazyAdmin4.jpg"/>
 * <p>Mirando bien tenemos un exploit llamado Backup Disclosure que recopila información, de una base de datos mySql.</p>
+>
 <img src="/imgs/lazyAdmin/lazyAdmin5.jpg"/>
 <br><br>
 `Lo que podemos observe es que hay una base de datos filtrada en una url en este caso http://localhost/inc/mysql_backup`
-* Veamos si existe el archivo filtrado.\
-<br>
+* Veamos si existe el archivo filtrado.
+>
 <img src="/imgs/lazyAdmin/lazyAdmin6.jpg"/>
 <br><br>
 `Ahora si vemos el archivo descargado podemos ver que hay un usuario llamado "manager" y la contraseña encriptada en MD5`
 * <p>Por cierto pensé en la gente y desarrolle este <font color="red">exploit</font> el cual te automatiza todo.</p>
+>
 
 ```bash
 #!/bin/bash
@@ -117,26 +123,34 @@ init $1
 
 
 ```
-* <p>Que por cierto si lo ejecutamos...</p>
+* <p>Si lo ejecutamos...</p>
+>
 <img src="/imgs/lazyAdmin/lazyAdmin7.jpg"/>
 <br><br>
 `Vemos el usuario y la contraseña.`
 * <p>Ahora desencriptar el hash anteriormente.</p>
 > john --format=Raw-MD5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+>
 <img src="/imgs/lazyAdmin/lazyAdmin8.jpg"/>
 <br><br>
 `contraseña débil.`
 * <p>Ahora ya podemos ingresar al login de la pagina web.</p>
+>
 <img src="/imgs/lazyAdmin/lazyAdmin9.jpg"/>
 * <p>Ahora nos vamos al apartado de anuncios.</p>
+>
 <img src="/imgs/lazyAdmin/lazyAdmin10.jpg"/>
 * <p>Ahora solo colocamos un codigo php que me de una web Shell. </p>
+>
 <img src="/imgs/lazyAdmin/lazyAdmin11.jpg"/>
 * <p>Ahora vamos a la url, donde se cargo el archivo php en este caso es en  <font color="yellow">http://localhost/content/inc/ads/( nombre de archivo).php</font></p>
+>
 <img src="/imgs/lazyAdmin/lazyAdmin12.jpg"/>
 * <p>Nos ponemos en escucha en nuestra terminal y recargamos la pagina web anterior, de esta forma ganaremos una web Shell</p>
+>
 <img src="/imgs/lazyAdmin/lazyAdmin13.jpg"/>
 * <p>Enumeramos el sistema para ver como podemos escalar privilegios.</p>
+>
 <img src="/imgs/lazyAdmin/lazyAdmin14.jpg"/>
 <br><br>
 `En la imagen podemos ver que tenemos permisos para ejecutar perl, un archivo llamado /home/itguy/backuo.pl que a su vez ejecuta otro archivo llamado /etc/copy.sh el cual vemos que tenemos permisos de escritura`

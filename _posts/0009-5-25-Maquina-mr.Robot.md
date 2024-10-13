@@ -2,13 +2,17 @@
 title: Máquina|Mr Robot|THM
 published: True
 ---
-<div class="contenedor">
-    <img src="imgs/mrRobot/mrRobot.png" width="160" alt="Cheese logo">
-    <div>
+
+
+<div class="contenedor imgc">
+    <img class="imgc" src="imgs/mrRobot/mrRobot.png" style="width: 169px" alt="Cheese logo">
+    <div> 
         <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Dificultad: Media </p>
         <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Url: <a href="https://tryhackme.com/room/mrrobot" style="color: lightblue;">MrRobot</a></p>
     </div>
 </div>
+ 
+
 
 
 
