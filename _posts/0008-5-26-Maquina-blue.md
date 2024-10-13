@@ -2,6 +2,7 @@
 title : Máquina|Blue|THM
 published : True
 ---
+
 <div class="contenedor">
     <img src="imgs/blue/blue.gif" width="160" alt="Cheese logo">
     <div>

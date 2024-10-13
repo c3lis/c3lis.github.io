@@ -1,8 +1,8 @@
 title: BlogChain
-description: "Hola, en esta pagina estare mostrando todo lo que he aprendido."
+description: " "
 author:
   name: "nouser"
-  email: "lamielseto2@gmail.com"
+  email: " "
   url: "https://h4cker-0.github.io"
 
 baseurl: /
@@ -10,7 +10,7 @@ baseurl: /
 source: .
 destination: ./_site
 permalink: /:title
-paginate: 10
+paginate: 2
 paginate_path: /page/:num/
 
 defaults:
@@ -29,4 +29,4 @@ plugins:
 
 # Custom variables
 owner : ""
-year : ""
+year : " "

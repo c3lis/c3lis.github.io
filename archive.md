@@ -17,7 +17,7 @@ title: archivve
     {% else %}
         <h3>{{ firstpostyear }}</h3>
     {% endif %}
-<p><font color="red" style="text-shadow: 0px 0px 10px white;" >c3lis</font></p>
+<p><font color="red" style="text-shadow: 0px 0px 10px white;">c3lis</font></p>
 <!-- <pre font color="white" style='font-size: 11.5px;' >
     <span class="cuadro1"></span> Difícil. <span class="cuadro2"></span> Medio. <span class="cuadro3"></span> Fácil.   
 </pre>

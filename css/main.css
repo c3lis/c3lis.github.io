@@ -1,5 +1,5 @@
 .contenedor {
-  width: 750px;  /* Ancho del cuadro */
+  width: 850px;  /* Ancho del cuadro */
   background-color: #15171a;  /* Color de fondo */
   padding: 20px;  /* Espacio interno */
   margin: 20px auto;  /* Centrando el cuadro */
@@ -57,8 +57,12 @@
 
 
 .contenedor img {
-  margin-right: 30px; /* Espacio entre imagen y texto */
+  margin-right: 10px; /* Espacio entre imagen y texto [!] No eliminar*/ 
+
 }
+
+
+
 
 .highlight {
   color: #d0d0d0;
@@ -149,18 +153,16 @@ body {
 /* General & 'Reset' Stuff */
 .container {
   padding: 10px 10px 10px;
-  
-  border: 1px solid black; 
+  border: 2px solid black; 
   border-radius: 20px !important; 
-  
   overflow: hidden;
   color: white;
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 70%;
+  margin: auto;
   position: relative;
   border-top: none;
   border-bottom: none;
+
 }
 
 
@@ -229,12 +231,31 @@ header h2 {
 }
 
 section img {
-  
   max-width: 100%;
-  border: 1px solid black; /* Bordes de 5px, color negro */
-  border-radius: 10px;    /* Bordes redondeados */
- /* Sombra */
+  border-radius: 12px;
+  transition: transform 0.5s ease; /* Transición suave para el zoom */
 }
+
+section img.zoom {
+  transform: scale(1.2); /* Aumenta el tamaño de la imagen al hacer clic */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo negro con transparencia */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Transición suave */
+  z-index: 1;
+}
+
+.overlay.active {
+  opacity: 100;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
@@ -287,32 +308,34 @@ ul li {
 }
 
 blockquote {
+
   color: pink;
-  padding-left: 0px;
+  padding-left: 10px;
 }
 pre {
-  background: rgba(0, 0, 0, 0.9);
+  background: #15171a;
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
   color: #b5e853;
-  border-radius: 2px;
+  border-radius: 15px;
   text-wrap: normal;
   overflow: auto;
-  overflow-y: hidden;
+  overflow-y: scroll;
+  display: inline-block;
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  max-width: 90%;
+  display: block;
 }
 
 code.highlighter-rouge {
-  background: rgba(0, 0, 0, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 0px 3px;
-  margin: 0px -3px;
   color: #aa759f;
-  border-radius: 2px;
+
 }
 
 table {
-  width: 100%;
+  width: 1000%;
   margin: 0 0 20px 0;
 }
 
@@ -408,4 +431,4 @@ a:hover {
   min-height: calc(100vh - 100px);
 }
 
-/*# sourceMappingURL=main.css.map */
+
