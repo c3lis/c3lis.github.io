@@ -157,7 +157,7 @@ body {
   border-radius: 20px !important; 
   overflow: hidden;
   color: white;
-  width: 70%;
+  width: 80%;
   margin: auto;
   position: relative;
   border-top: none;
@@ -312,6 +312,8 @@ blockquote {
   color: pink;
   padding-left: 10px;
 }
+
+
 pre {
   background: #15171a;
   border: 1px solid rgba(255, 255, 255, 0.15);
