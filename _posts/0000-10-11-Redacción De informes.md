@@ -2,12 +2,16 @@
 title: Redacción De Informes 
 published : Trues
 ---
-<div class="contenedor">
-    <img src="imgs/redaccionDeInformes/portada.png" width="160" alt="Cheese logo">
-    <div>
-        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Desarrollo De Informes En Latex.</p>
+
+
+<div class="contenedor imgc">
+    <img class="imgc" src="imgs/redaccionDeInformes/portada.png" style="width: 169px" alt="Cheese logo">
+    <div> 
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Desarrollo De Informes En Latex </p>
     </div>
 </div>
+ 
+
 
 <center><font color="red">#</font>La Importancia De Elaborar Informes En El Pentesting</center>
 
