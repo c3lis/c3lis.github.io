@@ -1,5 +1,5 @@
 ---
-title : Máquina|Lazy Admin|THM
+title : Máquina|Lazy Admin|THM|EC|SUID
 published : True
 ---
 

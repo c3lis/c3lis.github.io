@@ -1,9 +1,9 @@
-
-1. `gem install jekyll`
-2. `gem install jekyll-seo-tag`
-3. `gem install jekyll-paginate`
-4. `gem install jekyll-sitemap`
-5. `jekyll serve --watch --port 8000`
+# Instalacion
+`gem install jekyll`
+`gem install jekyll-seo-tag`
+`gem install jekyll-paginate`
+`gem install jekyll-sitemap`
+`jekyll serve --watch --port 8000`
 
 
 
