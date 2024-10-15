@@ -198,9 +198,30 @@ section img {
   border-radius: 10px;        /* Bordes redondeados */
   transition: transform 0.3s ease; /* Transición suave para el zoom */
   display: block;
-  margin: 0 auto;             /* Centra la imagen */
+  margin: auto;             /* Centra la imagen */
 }
 
+section img {
+  width: 100%;                /* Ocupa el 100% del ancho del contenedor */
+  max-width: 700px;           /* Ancho máximo de 700px para pantallas más grandes */
+  height: auto;               /* Mantiene la proporción de la imagen */
+  object-fit: cover;          /* Recorta la imagen si es necesario para mantener la proporción */
+  border-radius: 10px;        /* Bordes redondeados */
+  transition: transform 0.3s ease; /* Transición suave para el zoom */
+  display: block;
+  margin: auto;               /* Centra la imagen */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  section img {
+    max-width: 100%;           /* En pantallas pequeñas, la imagen ocupa todo el ancho sin limitarse */
+  }
+  
+  section p {
+    font-size: 1.2em;          /* Aumenta ligeramente el tamaño del texto */
+  }
+}
 
 section img.zoom {
   transform: scale(1.3);      /* Aumenta el tamaño de la imagen al hacer clic */
@@ -209,11 +230,11 @@ section img.zoom {
 
 .imgc {
   /* Mantener los estilos específicos que desees aquí */
-  border-radius: 12px;  
-       /* Bordes redondeados */
+  border-radius: 12px;  /* Bordes redondeados *
   transition: transform 0.3s ease; /* Transición suave para el zoom */
   max-width: 100%;   
-  margin-right: 20px;         /* Asegúrate de que la imagen no exceda el ancho del contenedor */
+  margin-right: 10px;         /* Asegúrate de que la imagen no exceda el ancho del contenedor */
+  margin-left: 20px;
 }
 
 
