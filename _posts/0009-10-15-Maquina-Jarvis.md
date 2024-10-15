@@ -114,7 +114,7 @@ server.interactive()
 * <p> Procedemos a ejecutar el exploit. </p>
 
 <center>
-<video width="600" autoplay loop muted style="position: relative; width: 700px;border-radius: 12px;">
+<video width="600" autoplay loop muted style="position: relative; width: 500px;border-radius: 12px;">
   <source src="imgs/Jarvis/video.mp4" type="video/mp4">
   Tu navegador no soporta la reproducción de video.
 </video> 
