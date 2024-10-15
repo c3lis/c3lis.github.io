@@ -114,10 +114,11 @@ server.interactive()
 * <p> Procedemos a ejecutar el exploit. </p>
 
 
-<video width="600" controls style="margin-left: 80px;border-radius: 12px;">
+<video controls style="width: 100%; max-width: 600px; border-radius: 12px; margin: 0 auto; display: block;">
   <source src="imgs/Jarvis/video.mp4" type="video/mp4">
   Tu navegador no soporta la reproducción de video.
 </video>
+
 
 * <p> Como quiero crearme una full tty no usare este exploit, sino que me pondré en escucha no netcat por el puerto 5550 y ejecuto el script.</p>
 >
