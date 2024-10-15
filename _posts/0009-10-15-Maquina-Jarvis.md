@@ -42,7 +42,8 @@ published : True
 >
 `union select 1,2,group_concat(User,0x3a,Password),4,5,6,7 from mysql.user-- -`
 
-* <p> Procedemos a descifrar el hash que es MySQL 4.1, y sacamos como resultado la credencial: imissyou</p>
+* <p> Desciframos el hash MySQL 4.1, y sacamos como resultado la credencial: imissyou</p>
+>
 <img src="imgs/Jarvis/Jarvis7.png">
 
 
@@ -114,8 +115,8 @@ server.interactive()
 * <p> Procedemos a ejecutar el exploit. </p>
 >
 
-<video autoplay loop muted style="max-width: 700px; border-radius: 12px; margin: 0 auto; display: block;">
-  <source src="imgs/Jarvis/video.gif" type="video/mp4">
+<video controls style="width: 100%; max-width: 600px; border-radius: 12px; margin: 0 auto; display: block;">
+  <source src="imgs/Jarvis/video.mp4" type="video/mp4">
   Tu navegador no soporta la reproducción de video.
 </video>
 

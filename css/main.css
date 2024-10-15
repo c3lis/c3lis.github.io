@@ -198,6 +198,7 @@ section img {
   object-fit: cover;          /* Mantiene la proporción de la imagen, cortando si es necesario */
   border-radius: 10px;        /* Bordes redondeados */
   transition: transform 0.3s ease; /* Transición suave para el zoom */
+  display: block;
   
 }
 
