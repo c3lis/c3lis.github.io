@@ -112,10 +112,10 @@ server.interactive()
 <img src="imgs/Jarvis/Jarvis15.png">
 
 * <p> Procedemos a ejecutar el exploit. </p>
+>
 
-
-<video autoplay loop muted style="width: 100%; max-width: 600px; border-radius: 12px; margin: 0 auto; display: block;">
-  <source src="imgs/Jarvis/video.mp4" type="video/mp4">
+<video autoplay loop muted style="max-width: 700px; border-radius: 12px; margin: 0 auto; display: block;">
+  <source src="imgs/Jarvis/video.gif" type="video/mp4">
   Tu navegador no soporta la reproducción de video.
 </video>
 
