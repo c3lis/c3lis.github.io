@@ -30,7 +30,7 @@ published : True
 * <p> Enumeramos directorios y archivos activos de la pagina web.</p>
 
 <img src="imgs/Jarvis/Jarvis4.png">
->
+
 
 * <p> Observamos el phpmyadmin y probamos credenciales por defecto.</p>
 
@@ -39,7 +39,7 @@ published : True
 * <p> Al estar enumerando la pagina mire que era susceptible a un ataque de inyección sql.</p>
 
 <img src="imgs/Jarvis/Jarvis6.png">
->
+
 `union select 1,2,group_concat(User,0x3a,Password),4,5,6,7 from mysql.user-- -`
 
 * <p> Desciframos el hash MySQL 4.1, y sacamos como resultado la credencial: imissyou</p>

