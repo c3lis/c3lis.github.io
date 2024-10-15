@@ -215,11 +215,8 @@ section img {
 /* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
   section img {
-    max-width: 100%;           /* En pantallas pequeñas, la imagen ocupa todo el ancho sin limitarse */
-  }
-  
-  section p {
-    font-size: 1.2em;          /* Aumenta ligeramente el tamaño del texto */
+                  /* Ancho fijo de 700px en pantallas pequeñas */
+    max-width: 270px;           /* Elimina la restricción de ancho máximo */
   }
 }
 
