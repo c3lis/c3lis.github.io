@@ -10,6 +10,17 @@
 
 }
 
+table {
+  width: 90%; /* Ajustar la tabla al 90% del ancho de la pantalla */
+  max-width: 700px; /* Ancho máximo de la tabla */
+  border-collapse: collapse; /* Combina bordes de celdas */
+  
+}
+th, td {
+  padding: 10px; /* Espaciado interno en celdas */
+  text-align: left; /* Alineación de texto */
+  border: 1px solid #ccc; /* Borde de celdas */
+}
 
 .ind {
   text-indent: 30px; /* Define la cantidad de espacio para la indentación */
