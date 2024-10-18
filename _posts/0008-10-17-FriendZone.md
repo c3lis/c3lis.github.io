@@ -11,8 +11,8 @@ published : True
     </div>
 </div>
 
-<h2><font color="white"><center># Friend Zone</center></font></h2>
 <br>
+<h2><font color="white"><center># Friend Zone</center></font></h2>
 
 * <p>Empezamos tirando una traza ICMP para ver a que maquina nos enfrentamos, como el TTL es de 63, aproximado a 64 quiero pensar que es una maquina Linux.</p>
 <img src="imgs/FriendZone/FriendZone2.png">
