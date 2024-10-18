@@ -196,3 +196,13 @@ done
 
 * <p>Procedemos a ejecutar el binario.</p>
 <img src="imgs/FriendZone2/FriendZone217.png">
+
+<br>
+<center> <p>Exploit de automatización para ganar acceso directamente a la maquina </p> </center>
+<center><p>Autor: c3lis</p></center>
+<center><a href="uploads/FriendZoneExploit.py" downlaod="FriendZoneExploi.py">>Descarga Exploit<</a></center>
+
+<video controls style="width: 100%; max-width: 700px; border-radius: 12px; margin: 0 auto; display: block;">
+  <source src="imgs/FriendZone/Video2.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
