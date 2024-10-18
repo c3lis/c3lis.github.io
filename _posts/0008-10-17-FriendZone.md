@@ -25,7 +25,7 @@ published : True
 
 * <p>Procedemos a poner el subdominio en el /etc/hosts</p>
 <img src="imgs/FriendZone/FriendZone5.png">
-imgs</p>
+<br>
 <img src="imgs/FriendZone1/FriendZone13.png">
 
 * <p>A la hora de verlos desde la web no hay nada relevante.</p>
@@ -157,7 +157,9 @@ tput cnorm
 <img src="imgs/FriendZone2/FriendZone211.png">
 
 * <p>Después de enumerar todo el sistema en búsqueda de credenciales no encontramos nada, entonces procedemos a enumerar procesos que se ejecuta en el sistema creando un simple archivo en bash.</p>
+
 <img src="imgs/FriendZone2/FriendZone212.png">
+
 
 ```bash
 #!/bin/bash
