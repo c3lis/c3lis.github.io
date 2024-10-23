@@ -1,5 +1,5 @@
 ---
-title : Máquina|Friend Zone|HTB|AXFR|Hijacking
+title : Máquina|Friend Zone|HTB|AXFR|HIJACKING
 published : True
 ---
 

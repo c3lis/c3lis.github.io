@@ -1,5 +1,5 @@
 ---
-title : Máquina|Ghoul|HTB|ZIP SLIP|Pivoting
+title : Máquina|Ghoul|HTB|ZIP SLIP|PIVOTING
 published : True
 ---
 
