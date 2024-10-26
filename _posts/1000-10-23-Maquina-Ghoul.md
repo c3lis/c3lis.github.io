@@ -6,7 +6,7 @@ published : True
 <div class="contenedor imgc">
     <img class="imgc" src="imgs/Ghoul/Ghoul1.png" style="border-radius: 150px; width: 169px" alt="Ghoul logo">
     <div> 
-        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Dificultad: Dificil </p>
+        <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Dificultad: Difícil </p>
         <p><font color="red" style="text-shadow: 5px 5px 20px red;">#</font> Url: <a href="https://app.hackthebox.com/machines/Ghoul" style="color: lightblue;">Ghoul</a></p>
     </div>
 </div>
