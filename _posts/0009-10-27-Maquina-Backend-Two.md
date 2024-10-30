@@ -1,5 +1,5 @@
 ---
-title : Máquina|BackendTwo|HTB|MassAssignment Attack|API
+title : Máquina|BackendTwo|HTB|MassAssignmentAttack|API
 published : True
 ---
 
