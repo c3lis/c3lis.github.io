@@ -1,5 +1,5 @@
 ---
-title : Máquina|TENTACLE|HTB|PROXYCHAINS|KERVEROS
+title : MQ|TENTACLE|HTB|PROXYCHAINS|KERVEROS
 published : True
 ---
 

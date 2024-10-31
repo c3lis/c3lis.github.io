@@ -1,5 +1,5 @@
 ---
-title : Máquina|Pickle Rick|THM|RCE|SUID
+title : MQ|Pickle Rick|THM|RCE|SUID
 published : True
 ---
 

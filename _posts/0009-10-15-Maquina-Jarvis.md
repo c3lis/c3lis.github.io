@@ -1,5 +1,5 @@
 ---
-title : Máquina|Jarvis|HTB|SQL|SUID
+title : MQ|Jarvis|HTB|SQL|SUID
 published : True
 ---
 
