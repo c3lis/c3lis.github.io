@@ -1,5 +1,5 @@
 ---
-title : MQ|Lazy dmin|THM|EC|SUID
+title : MQ|Lazydmin|THM|EC|SUID
 published : True
 ---
 

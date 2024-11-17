@@ -1,5 +1,5 @@
 ---
-title: MQ|Mr Robot|THM|EC|NMAP
+title: MQ|MrRobot|THM|EC|NMAP
 published: True
 ---
 
