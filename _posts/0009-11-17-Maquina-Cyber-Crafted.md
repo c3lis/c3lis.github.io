@@ -75,11 +75,11 @@ PasswordField[pwd], Title[Log In], X-UA-Compatible[IE=edge]
 
 * Procedemos a verificar el dominio encontrado, y probamos credenciales por defecto, pero no tenemos éxito.
 
-    |# admin:admin
-    |# administrator:admin 
-    |# admin:password
-    |# 'or 1=1-- -
-    |# '\|\|or 1=1-- 
+      admin:admin
+      administrator:admin 
+      admin:password
+      'or 1=1-- -
+      '||or 1=1-- 
 
 * Si analiza la pagina mas afondo podemos ver que podemos ejecutar un XSS.
 
