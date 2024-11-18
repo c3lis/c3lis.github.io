@@ -26,5 +26,5 @@ published : True
 
 * Enumeración de subdominios
 
-        wfuzz -c -f domains -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u "http://$target_ip" -H "Host: FUZZ.ejemplo.com" 
+        gobuster dns -d etb.com -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 
