@@ -133,7 +133,7 @@ HOP RTT       ADDRESS
  1 of 1 target successfully completed, 1 valid password found
 ```
 
-* Ahora con la credencial encontramos vemos que hay en la pagina web.
+* Ahora con la credencial encontrada y el usuario vemos que hay en la pagina web.
 
 <img src="imgs/YerOfTheFox/YerOfTheFox2.png">
 
