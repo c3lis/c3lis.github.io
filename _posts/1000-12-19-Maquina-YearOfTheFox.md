@@ -230,4 +230,4 @@ root@year-of-the-fox:/dev/shm# whoami
 root
 ```
 
-* Y listo lo que hicimos fue alterar la ruta para que primero busque por /tmp/ el binario shutdown si lo encuentra entonces este lo ejecutara, de esta forma nos da la shell como root puesto que renombramos el binario para fuera shutdown en ves de bash. 
+* Y listo lo que hicimos fue alterar la ruta para que primero busque por /tmp/ el binario shutdown si lo encuentra entonces este lo ejecutara, de esta forma nos da la shell como root puesto que renombramos el binario para que fuera shutdown en ves de bash. 
