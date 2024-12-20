@@ -1,5 +1,5 @@
 ---
-title : MQ|Rabbit|HTB|RCE|LXD
+title : MQ|Rabbit|THM|FTP|BRAINFUCK|LXD
 published : True
 ---
 
@@ -90,7 +90,7 @@ OS and Service detection performed. Please report any incorrect results at https
 
 <img src="imgs/Rabbit/Rabbit1.png">
 
-* Si observamos el código fuente de la pagina observamos que agrega una hoja de estilo cuando por lo normal esta es independiente.
+* Si observamos el código fuente de la pagina agrega una hoja de estilo cuando por lo normal esta es independiente.
 
 <img src="imgs/Rabbit/Rabbit2.png">
 
