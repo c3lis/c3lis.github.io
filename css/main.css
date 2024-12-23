@@ -117,7 +117,7 @@ body {
   color: #eaeaea;
   font-size: 16px;
   line-height: 1.5;
-  font-family: "Lucida Console";
+  font-family: 'Courier New', Courier, monospace;
  /* Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;*/
 }
 
@@ -308,7 +308,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 dt {
-  font-style: italic;
+  font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
 }
 
@@ -323,7 +323,7 @@ blockquote {
   padding-left: 10px;
 }
 pre {
-  background: #060601; /* Coomm 151717*/
+  background: #4B2E2E; /* Coomm 151717*/
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 10px;
   font-size: 14px;
@@ -409,9 +409,10 @@ hr {
 */
 a {
   /*color: #63c0f5;*/
-  
   color: red;
   text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+
 }
 a:hover {
   text-decoration: underline; /* Subrayado al pasar el mouse */
