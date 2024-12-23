@@ -1,5 +1,5 @@
 .contenedor {
-  width: 850px;  /* Ancho del cuadro */
+  width: 400px;  /* Ancho del cuadro */
   background-color: #1b1d1d;  /* Color de fondo */
   padding: 20px;  /* Espacio interno */
   margin: 20px auto;  /* Centrando el cuadro */
@@ -7,7 +7,7 @@
   align-items: center;  /* Centrar verticalmente */
   color: white;  /* Color del texto */
   text-shadow: 5px 5px 20px white;
-  box-shadow: 5px 5px 5px whitesmoke;
+  margin: auto;
 
 }
 
