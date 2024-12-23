@@ -37,9 +37,7 @@ rtt min/avg/max/mdev = 410.246/410.246/410.246/0.000 ms
 ```java
 # Nmap 7.94SVN scan initiated Thu Dec 19 14:29:55 2024 as: nmap --min-rate 5000 -sS -Pn --open -p- -A -sCV -v -oN all_services 10.10.92.139
 Nmap scan report for 10.10.92.139
-Host is up (0.40s latency).
-Not shown: 64446 closed tcp ports (reset), 1086 filtered tcp ports (no-response)
-Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+
 PORT    STATE SERVICE     VERSION
 80/tcp  open  http        Apache httpd 2.4.29
 |_http-title: 401 Unauthorized
@@ -49,48 +47,6 @@ PORT    STATE SERVICE     VERSION
 |_http-server-header: Apache/2.4.29 (Ubuntu)
 139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: YEAROFTHEFOX)
 445/tcp open  netbios-ssn Samba smbd 4.7.6-Ubuntu (workgroup: YEAROFTHEFOX)
-Aggressive OS guesses: Linux 3.1 (95%), Linux 3.2 (95%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (95%), ASUS RT-N56U WAP (Linux 3.4) (93%), Linux 3.16 (93%), Linux 2.6.32 (93%), Linux 2.6.39 - 3.2 (93%), Linux 3.1 - 3.2 (93%), Linux 3.2 - 4.9 (93%), Linux 3.7 - 3.10 (93%)
-No exact OS matches for host (test conditions non-ideal).
-Uptime guess: 21.338 days (since Thu Nov 28 06:24:38 2024)
-Network Distance: 5 hops
-TCP Sequence Prediction: Difficulty=261 (Good luck!)
-IP ID Sequence Generation: All zeros
-Service Info: Hosts: year-of-the-fox.lan, YEAR-OF-THE-FOX
-
-Host script results:
-| smb-os-discovery: 
-|   OS: Windows 6.1 (Samba 4.7.6-Ubuntu)
-|   Computer name: year-of-the-fox
-|   NetBIOS computer name: YEAR-OF-THE-FOX\x00
-|   Domain name: lan
-|   FQDN: year-of-the-fox.lan
-|_  System time: 2024-12-19T19:30:34+00:00
-| smb2-security-mode: 
-|   3:1:1: 
-|_    Message signing enabled but not required
-| smb-security-mode: 
-|   account_used: guest
-|   authentication_level: user
-|   challenge_response: supported
-|_  message_signing: disabled (dangerous, but default)
-| nbstat: NetBIOS name: YEAR-OF-THE-FOX, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
-| Names:
-|   YEAR-OF-THE-FOX<00>  Flags: <unique><active>
-|   YEAR-OF-THE-FOX<03>  Flags: <unique><active>
-|   YEAR-OF-THE-FOX<20>  Flags: <unique><active>
-|   \x01\x02__MSBROWSE__\x02<01>  Flags: <group><active>
-|   YEAROFTHEFOX<00>     Flags: <group><active>
-|   YEAROFTHEFOX<1d>     Flags: <unique><active>
-|_  YEAROFTHEFOX<1e>     Flags: <group><active>
-| smb2-time: 
-|   date: 2024-12-19T19:30:34
-|_  start_date: N/A
-
-TRACEROUTE (using port 80/tcp)
-HOP RTT       ADDRESS
-1   276.97 ms 10.17.0.1
-2   ... 4
-5   399.17 ms 10.10.92.139
 ```
 * Procedemos a ver el puerto http 80 que corre el servidor, y vemos que nos muestra un login.
 
@@ -158,7 +114,8 @@ www-data
 ```
 
 * Procedemos a enumerar puertos internos de la maquina y vemos que hay un puerto ssh corriendo de manera interna.
-        
+
+
         netstat -nl
 
 ```java

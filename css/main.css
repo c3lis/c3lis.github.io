@@ -1,15 +1,16 @@
-.contenedor {
-  width: 400px;  /* Ancho del cuadro */
-  background-color: #1b1d1d;  /* Color de fondo */
-  padding: 20px;  /* Espacio interno */
-  margin: 20px auto;  /* Centrando el cuadro */
-  display: flex;  /* Usar flexbox para alinear elementos */
-  align-items: center;  /* Centrar verticalmente */
-  color: white;  /* Color del texto */
-  text-shadow: 5px 5px 20px white;
-  margin: auto;
-
+.contenedor {  /* Contenedor header de articulos */
+  width: 850px;
+  background-color: #15171a;
+  padding: 20px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  color: white;
 }
+
+
+
+/* 151515 */
 
 table {
   width: 90%; /* Ajustar la tabla al 90% del ancho de la pantalla */
@@ -26,7 +27,6 @@ th, td {
 .ind {
   text-indent: 30px; /* Define la cantidad de espacio para la indentación */
 }
-
 
 
 
@@ -323,12 +323,12 @@ blockquote {
   padding-left: 10px;
 }
 pre {
-  background: #15171a;
+  background: #060601; /* Coomm 151717*/
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 10px;
   font-size: 14px;
   color: #b5e853;
-  border-radius: 15px;
+  border-radius: 10px;
   text-wrap: normal;
   overflow: auto;
   overflow-y: scroll;
@@ -336,6 +336,8 @@ pre {
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   max-width: 90%;
   display: block;
+  font-family: 'Courier New', Courier, monospace;
+ 
 }
 
 code.highlighter-rouge {
