@@ -1,12 +1,13 @@
 .contenedor {
   width: 850px;  /* Ancho del cuadro */
-  background-color: #15171a;  /* Color de fondo */
+  background-color: #1b1d1d;  /* Color de fondo */
   padding: 20px;  /* Espacio interno */
   margin: 20px auto;  /* Centrando el cuadro */
   display: flex;  /* Usar flexbox para alinear elementos */
   align-items: center;  /* Centrar verticalmente */
   color: white;  /* Color del texto */
   text-shadow: 5px 5px 20px white;
+  box-shadow: 5px 5px 5px whitesmoke;
 
 }
 
@@ -125,7 +126,7 @@ body {
   
   padding: 10px 10px 10px;
   border: 1px solid black; 
-  border-radius: 20px !important; 
+  border-radius: 15px !important; 
   overflow: hidden;
   color: white;
   width: 90%;
@@ -134,8 +135,9 @@ body {
   position: relative;
   border-top: none;           /* Elimina el borde superior */
   border-bottom: none;        /* Elimina el borde inferior */
-}
 
+}
+/* color #1b1d1d */
 
 
 
